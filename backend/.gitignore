@@ -1,6 +1,8 @@
 *.sqlite3
 db.sqlite3
 
+create_admin.txt
+
 .DS_Store
 node_modules
 /dist
