@@ -3,9 +3,6 @@
     <div class="searchpage_input">
       <input type="text" />
       <i class="fas fa-search" />
-      <div class="backBtn">
-        <span>취소</span>
-      </div>
     </div>
     <div class="current_keyword">
       <div class="current_keyword_header">
@@ -38,7 +35,7 @@ export default {};
 }
 
 .searchpage_input input[type="text"] {
-  width: 85%;
+  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   outline: none;
