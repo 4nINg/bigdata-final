@@ -3,6 +3,8 @@ import json
 import requests
 import pandas as pd
 
+
+
 # 'http://apis.data.go.kr/1470000/HtfsInfoService/' 건강기능 식품 정보 서비스
 # 'http://apis.data.go.kr/1470000/HtfsTrgetInfoService' 건강기능 대상별 정보(DB) 서비스
 
@@ -44,18 +46,18 @@ url = 'http://apis.data.go.kr/1470000/HtfsInfoService/getHtfsItem?ServiceKey=' +
 
 entire_list = {}
 index = []
-register_date = []
-product_name = []
-preservation_desc = []
-main_function = []
-sungsang = []
-intake_hint = []
-srv_use = []
-register_num = []
-distribute = []
-full_desc = []
-company_name = []
-standard_stnd = []
+register_date = [] #등록일자
+product_name = [] #제품명
+preservation_desc = [] #보존 및 유통기준
+main_function = [] #주된 기능
+sungsang = [] #성상
+intake_hint = [] #섭취시 주의사항
+srv_use = [] #용도용법 섭취량, 섭취방법
+register_num = [] #품목제조관리번호
+distribute = [] #보존 및 유통기한
+full_desc = [] #기본 전체 정보
+company_name = [] #회사명
+standard_stnd = [] #기준 및 규격
 
 
 cnt = 1
@@ -77,22 +79,22 @@ for page in range(1,272):
         print('현재 페이지', page, '페이지 내 데이터 갯수', len(response))
         for i in range(len(response)):
             index.append(cnt)
-            register_date.append(response[i]['REGIST_DT'])
-            product_name.append(response[i]['PRDUCT'])
-            preservation_desc.append(response[i]['PRSRV_PD'])
-            main_function.append(response[i]['MAIN_FNCTN'])
-            sungsang.append(response[i]['SUNGSANG'])
-            intake_hint.append(response[i]['INTAKE_HINT1'])
-            srv_use.append(response[i]['SRV_USE'])
-            register_num.append(response[i]['STTEMNT_NO'])
-            distribute.append(response[i]['DISTB_PD'])
-            full_desc.append(response[i]['BASE_STANDARD'])
-            company_name.append(response[i]['ENTRPS'])
+            register_date.append(response[i]['REGIST_DT']) #등록일자
+            product_name.append(response[i]['PRDUCT']) #제품명
+            preservation_desc.append(response[i]['PRSRV_PD']) #보존 및 유통기준
+            main_function.append(response[i]['MAIN_FNCTN']) #주된 기능
+            sungsang.append(response[i]['SUNGSANG']) #성상
+            intake_hint.append(response[i]['INTAKE_HINT1']) #섭취시 주의사항
+            srv_use.append(response[i]['SRV_USE']) #용도용법 섭취량, 섭취방법
+            register_num.append(response[i]['STTEMNT_NO']) #품목제조관리번호
+            distribute.append(response[i]['DISTB_PD']) #보존 및 유통기한
+            full_desc.append(response[i]['BASE_STANDARD']) #기본 전체 정보
+            company_name.append(response[i]['ENTRPS']) #회사명
             cnt += 1
 
             #기준 및 규격 정보가 없을 경우, 에러발생 막기 위해 try & except 사용
             try:
-                standard_stnd.append(add_info[response[i]['STTEMNT_NO']])
+                standard_stnd.append(add_info[response[i]['STTEMNT_NO']]) #기준 및 규격
             except Exception as e:
                 standard_stnd.append('')
                 print(e,"추가정보 값 없음")       
