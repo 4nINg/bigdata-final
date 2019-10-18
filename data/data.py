@@ -1,24 +1,22 @@
-import urllib.request
+import urllib
+import xmltodict
 import json
 
-response = urllib.request.urlopen('http://apis.data.go.kr/1470000/HtfsTrgetInfoService/getHtfsInfoList?serviceKey=%2BzCak%2FfLP4v3W6mGff2%2Bhsj%2BJvQ9pOQBEevpvH8hjZswIEmK7vOkvqq12nX2AGqLD7VBRqqODGHoLQBorV5OaQ%3D%3D')
-byte_data = response.read()
-text_data = byte_data.decode('utf-8')
-flag = False
-flag2 = False
-for line in text_data.split("\n"):
-    if "<items>" in line:
-        flag = True
-    if flag:
-        if "<item>" in line:
-            flag2 = True
-        if flag2:
-            print(line)
-        if "</item>" in line:
-            flag2 = False
-    if "</items>" in line:
-        flag = False
-    
+ServiceKey = "hZ5wN1oxmwnrr1aSfsKpi1XM8AhX3DGSYBkahybytwVOCZfDpDgfvrQmZkxHvEGfNd%2BgFEsDzQdl4BhjG%2BbU3Q%3D%3D"
+url = 'http://apis.data.go.kr/1470000/HtfsInfoService/getHtfsItem'
+# 'http://apis.data.go.kr/1470000/HtfsInfoService/' 건강기능 식품 정보 서비스
+# 'http://apis.data.go.kr/1470000/HtfsTrgetInfoService' 건강기능 대상별 정보(DB) 서비스
 
-# print(type(text_data))
-# print(text_data)
+queryParams = '?' + 'serviceKey=' + ServiceKey
+
+request = urllib.request.Request(url+queryParams)
+response = urllib.request.urlopen(request)
+rescode = response.getcode()
+if(rescode==200):
+    response_body = response.read()
+    rD = xmltodict.parse(response_body)
+    rDJ = json.dumps(rD)
+    rDD = json.loads(rDJ)
+    print(rDD)
+else:
+    print("Error Code:" + rescode)

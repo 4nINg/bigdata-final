@@ -29,7 +29,7 @@ URL = 'http://apis.data.go.kr/1470000/HtfsInfoService/getHtfsItem?ServiceKey='+ 
 parameters = {
     # 'numOfRows': 10,
     # 'pageNo': 1,
-    # 'Prduct': "(구) 팻다운 톡",
+    'Prduct': "나우푸드",
     }
 
 res = requests.get(URL, params=parameters)

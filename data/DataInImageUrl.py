@@ -5,7 +5,7 @@ import json
 
 client_id = "vIfAnKuEGVn8pdpNJHU5"
 client_secret = "ICj95OKn_H"
-encText = urllib.parse.quote("박보영")
+encText = urllib.parse.quote("홍삼쥬니어")
 url = "https://openapi.naver.com/v1/search/image?query=" + encText # json 결과
 request = urllib.request.Request(url)
 request.add_header("X-Naver-Client-Id",client_id)
