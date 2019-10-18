@@ -1,7 +1,7 @@
 <template>
   <div class="newproduct_main">
     <div class="newproduct_header">
-      <span>신규 등록 제품</span>
+      <span>new&nbsp;</span><span>신규 등록 제품</span>
     </div>
     <div class="newproduct_container">
       <div class="newproduct_content">
@@ -50,6 +50,10 @@ export default {};
   align-items: center;
 }
 
+.newproduct_header span:first-child{
+ color:#e85f63;
+}
+
 .newproduct_container {
   width: 100%;
   height: 70%;
@@ -74,6 +78,6 @@ export default {};
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  margin-right: 5%;
+  margin-right: 1%;
 }
 </style>

@@ -37,7 +37,7 @@ export default {};
 .searchpage_input input[type="text"] {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #ededed;
   outline: none;
   border-radius: 8px;
 }

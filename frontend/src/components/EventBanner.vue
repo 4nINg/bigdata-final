@@ -6,12 +6,10 @@
     <div class="event_container">
       <div class="event_content">
         <div class="event">
-          <span></span>
-          <span>이벤트 1</span>
+          <img src="../../image/banner/event/three.png">
         </div>
         <div class="event">
-          <span></span>
-          <span>이벤트 2</span>
+         <img src="../../image/banner/event/three.png">
         </div>
         <div class="event">
           <span></span>
@@ -35,7 +33,7 @@ export default {};
 <style>
 .event_main {
   width: 100%;
-  height: 25vh;
+  height: 23vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +42,7 @@ export default {};
 
 .event_header {
   width: 100%;
-  height: 30%;
+  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +50,7 @@ export default {};
 
 .event_container {
   width: 100%;
-  height: 70%;
+  height: 80%;
   overflow: hidden;
 }
 
@@ -70,7 +68,12 @@ export default {};
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-right: 1%;
+}
+
+.event img{
+  width: 100%;
+
 }
 </style>

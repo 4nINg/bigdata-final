@@ -1,12 +1,11 @@
 <template>
   <div class="header_main">
     <div class="logo_main">
-      <span>DODAM</span>
-      <span>DODAM</span>
+      <img src="../../image/logo/main_logo.svg" alt="DODAMDODMA" height="30">
     </div>
     <div class="icon_main">
-      <i class="far fa-bell" />
-      <i class="fas fa-user" />
+      <i class="far fa-bell logo_design"/>
+      <i class="fas fa-user logo_design"/>
     </div>
   </div>
 </template>
@@ -15,8 +14,9 @@ export default {};
 </script>
 <style>
 .header_main {
+  background-color:#e85f63;
   width: 100%;
-  height: 8vh;
+  height: 7.5vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,13 +29,22 @@ export default {};
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left:2.5%
 }
 
 .icon_main {
-  width: 15%;
+  width: 18%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.logo_design{
+  color:#fff;
+  font-size:1.4em;
+}
+
+.logo_design:last-child{
+  margin-right:10%;
 }
 </style>
