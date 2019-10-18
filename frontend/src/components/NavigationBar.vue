@@ -17,7 +17,7 @@
 <script>
 import router from "../router";
 export default {
-  data: {},
+  data: () => ({}),
   methods: {
     goTo(n) {
       if (n == 0) {
