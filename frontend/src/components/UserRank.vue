@@ -65,7 +65,7 @@ export default {};
   font-size:1em;
   font-weight: 800;
 }
-.rank_header span:nth-child(1) {
+.rank_header span:chil {
   color:#e85f63;
 }
 
