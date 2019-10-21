@@ -5,30 +5,25 @@
     </div>
     <div class="event_container">
       <div class="event_content">
-        <div class="event">
-          <img src="../../../../image/banner/event/three.png">
-        </div>
-        <div class="event">
-         <img src="../../../../image/banner/event/three.png">
-        </div>
-        <div class="event">
-          <span></span>
-          <span>이벤트 3</span>
-        </div>
-        <div class="event">
-          <span></span>
-          <span>이벤트 4</span>
-        </div>
-        <div class="event">
-          <span></span>
-          <span>이벤트 5</span>
+        <div v-for="banner in bannerlist" class="event">
+          <img v-bind:src="banner.src">
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data:function() {
+    return{
+      bannerlist:[
+               {src:'https://i0.wp.com/wp.americandatabank.com/wp-content/uploads/2016/03/banner-drug-testing.jpg'},
+               {src:'https://i0.wp.com/wp.americandatabank.com/wp-content/uploads/2016/03/banner-drug-testing.jpg'},
+               {src:'https://i0.wp.com/wp.americandatabank.com/wp-content/uploads/2016/03/banner-drug-testing.jpg'},
+               {src:'https://i0.wp.com/wp.americandatabank.com/wp-content/uploads/2016/03/banner-drug-testing.jpg'},
+          ]};
+  }
+};
 </script>
 <style>
 .event_main {
