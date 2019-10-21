@@ -5,8 +5,8 @@
   </div>
 </template>
 <script>
-import Navigation from "../NavigationBar";
-import EventList from "../EventList";
+import Navigation from "../../Base/NavigationBar";
+import EventList from "../Panel/EventList";
 
 export default {
   components: {
@@ -14,6 +14,7 @@ export default {
     EventList: EventList
   }
 };
+
 </script>
 <style>
 </style>

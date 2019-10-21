@@ -1,7 +1,7 @@
 <template>
   <div class="header_main">
-    <div class="logo_main">
-      <img src="../../image/logo/main_logo.svg" alt="DODAMDODMA" height="30">
+    <div class="logo_main" @click="goTo()">
+      <img src="../../../image/logo/logo.svg" alt="DODAMDODMA" height="40">
     </div>
     <div class="icon_main">
       <i class="far fa-bell logo_design"/>
@@ -10,7 +10,15 @@
   </div>
 </template>
 <script>
-export default {};
+import router from "../../router"
+export default {
+  methods: {
+    goTo()
+    {
+      router.push("/");
+    }
+  },
+};
 </script>
 <style>
 .header_main {
@@ -29,7 +37,9 @@ export default {};
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left:2.5%
+  margin-left:2.5%;
+  cursor: pointer;
+  margin-top:-1%;
 }
 
 .icon_main {
