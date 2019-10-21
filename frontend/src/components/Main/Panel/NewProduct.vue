@@ -4,25 +4,6 @@
       <span>new&nbsp;</span>
       <span>신규 등록 제품</span>
     </div>
-    <!-- <div class="newproduct_container swiper-container">
-      <div class="newproduct_content swiper-wrapper">
-        <div class="product swiper-slide">
-          <span>비타민1</span>
-        </div>
-        <div class="product swiper-slide">
-          <span>비타민2</span>
-        </div>
-        <div class="product swiper-slide">
-          <span>비타민3</span>
-        </div>
-        <div class="product swiper-slide">
-          <span>비타민4</span>
-        </div>
-        <div class="product swiper-slide">
-          <span>비타민5</span>
-        </div>
-      </div>
-    </div>-->
     <div class="carousel_div">
       <carousel
         :nav="false"
