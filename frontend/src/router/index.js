@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import MainPage from "../components/pages/MainPage"
-import SearchPage from "../components/pages/SearchPage"
-import EventPage from "../components/pages/EventPage"
+import MainPage from "../components/Main/Views/MainPage"
+import SearchPage from "../components/Search/Views/SearchPage"
+import EventPage from "../components/Event/Views/EventPage"
+import RankPage from "../components/Rank/Views/RankPage"
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -11,7 +12,8 @@ const router = new VueRouter({
     routes: [
         { path: '/', component: MainPage, name: 'home' },
         { path: '/search', component: SearchPage, name: 'search' },
-        { path: '/event', component: EventPage, name: 'evnet' }
+        { path: '/event', component: EventPage, name: 'evnet' },
+        { path: '/rank', component: RankPage, name: 'rank' },
 
     ],
     scrollBehavior() {

@@ -6,10 +6,10 @@
     <div class="event_container">
       <div class="event_content">
         <div class="event">
-          <img src="../../image/banner/event/three.png">
+          <img src="../../../../image/banner/event/three.png">
         </div>
         <div class="event">
-         <img src="../../image/banner/event/three.png">
+         <img src="../../../../image/banner/event/three.png">
         </div>
         <div class="event">
           <span></span>
@@ -33,11 +33,14 @@ export default {};
 <style>
 .event_main {
   width: 100%;
-  height: 23vh;
+  height: 24vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color:#fff;
+  margin-top:0.8vh;
+  padding-bottom:1vh;
 }
 
 .event_header {
