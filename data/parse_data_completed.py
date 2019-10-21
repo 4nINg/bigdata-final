@@ -3,17 +3,18 @@ import json
 import requests
 import pandas as pd
 
-
+with open('secret.json') as f:
+    secrets = json.loads(f.read())
 
 # 'http://apis.data.go.kr/1470000/HtfsInfoService/' 건강기능 식품 정보 서비스
 # 'http://apis.data.go.kr/1470000/HtfsTrgetInfoService' 건강기능 대상별 정보(DB) 서비스
 
 
 # 건강기능 대상별 정보(DB) 파싱
-ServiceKey_for_add_info = 'hZ5wN1oxmwnrr1aSfsKpi1XM8AhX3DGSYBkahybytwVOCZfDpDgfvrQmZkxHvEGfNd%2BgFEsDzQdl4BhjG%2BbU3Q%3D%3D'
+ServiceKey_for_add_info = secrets['key']
 URL_for_add_info = 'http://apis.data.go.kr/1470000/HtfsTrgetInfoService/getHtfsInfoList?ServiceKey='+ ServiceKey_for_add_info
 
-#기준 및 규격 정보 저장용, 딕셔너리 변수 선언ㅇ
+#기준 및 규격 정보 저장용, 딕셔너리 변수 선언
 add_info = {}
 
 # 데이터 갯수 약 27,000개, 1페이지 당 100개의 데이터 파싱 가능
@@ -41,7 +42,7 @@ print('-----------------------------------')
 
 
 # 건강기능 식품 정보 서비스 정보 파싱
-ServiceKey = "hZ5wN1oxmwnrr1aSfsKpi1XM8AhX3DGSYBkahybytwVOCZfDpDgfvrQmZkxHvEGfNd%2BgFEsDzQdl4BhjG%2BbU3Q%3D%3D"
+ServiceKey = secrets['key']
 url = 'http://apis.data.go.kr/1470000/HtfsInfoService/getHtfsItem?ServiceKey=' + ServiceKey
 
 entire_list = {}
