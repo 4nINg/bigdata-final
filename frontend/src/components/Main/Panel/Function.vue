@@ -23,7 +23,9 @@ export default {};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1%;
+  margin-top: 0.8vh;
+  padding-bottom:1vh;
+  background-color:#fff;
 }
 
 .function {
