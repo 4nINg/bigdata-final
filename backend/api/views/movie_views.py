@@ -6,7 +6,7 @@ from rest_framework.response import Response
 
 
 @api_view(['GET', 'POST', 'DELETE'])
-def movies(request):
+def health_food(request):
 
     if request.method == 'GET':
         id = request.GET.get('id', request.GET.get('movie_id', None))
