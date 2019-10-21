@@ -4,11 +4,11 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    gender = models.CharField(max_length=10, default='M')
-    age = models.IntegerField(default=25)
-    occupation = models.CharField(max_length=200)
-
-
+    email = models.TextField()
+    nickname = models.TextField()
+    age = models.IntegerField()
+    gender = models.CharField(max_length=2, default='M')
+    
 #  wrapper for create user Profile
 def create_profile(**kwargs):
 
@@ -20,19 +20,10 @@ def create_profile(**kwargs):
 
     profile = Profile.objects.create(
         user=user,
-        gender=kwargs['gender'],
+        email=kwargs['email'],
+        nickname=kwargs['nickname'],
         age=kwargs['age'],
-        occupation=kwargs['occupation']
+        gender=kwargs['gender'],
     )
 
     return profile
-
-
-class Movie(models.Model):
-    id = models.IntegerField(primary_key=True)
-    title = models.CharField(max_length=200)
-    genres = models.CharField(max_length=500)
-
-    @property
-    def genres_array(self):
-        return self.genres.strip().split('|')
