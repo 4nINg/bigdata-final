@@ -32,7 +32,8 @@ export default {};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1%;
   border: 1px solid black;
+  margin-top:0.5vh;
+  background-color:#fff;
 }
 </style>

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Header from "./components/Header";
+import Header from "./components/Base/Header";
 
 export default {
   components: {
@@ -33,5 +33,7 @@ export default {
   max-height: 812px;
   width: 100%;
   height: 100vh;
+  
+  background-color:rgb(230, 230, 230);
 }
 </style>
