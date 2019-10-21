@@ -4,11 +4,11 @@
       <span>검색</span>
       <span class="line_span"></span>
     </div>
-    <div class="navigation_menu" @click="goTo(1)">
+    <div class="navigation_menu margin_menu" @click="goTo(1)">
       <span>랭킹</span>
       <span class="line_span"></span>
     </div>
-    <div class="navigation_menu" @click="goTo(2)">
+    <div class="navigation_menu margin_menu" @click="goTo(2)">
       <span>이벤트</span>
       <span class="line_span"></span>
     </div>
@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-import router from "../router";
+import router from "../../router";
 export default {
   
   methods: {
@@ -28,6 +28,7 @@ export default {
         router.push("/search");
       } else if (n == 1) {
       } else if (n == 2) {
+        router.push("/event");
       } else if (n == 3) {
       }
     }
@@ -37,17 +38,18 @@ export default {
 <style>
 .navigation_bar {
   width: 100%;
-  height: 6.5vh;
+  height: 7.5vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid lightgray;
+  background-color:#fff;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 .navigation_menu {
-  /* margin-top:5px;
-  margin-bottom: 5px; */
-  width: 20%;
+  /* width: 15%; */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -55,6 +57,8 @@ export default {
   align-items: center;
   cursor: pointer;
 }
+
+
 .navigation_menu:hover{
 border-bottom: 3px solid #e85f63;
 }

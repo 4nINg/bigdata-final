@@ -5,37 +5,37 @@
     </div>
     <div class="rank_menus">
       <div class="rank_menu">
-        <img src="../../image/icons/rank/man.png"/>
+        <img src="../../../../image/icons/rank/man.png"/>
         <span>
           남성
         </span>
       </div>
       <div class="rank_menu">
-        <img src="../../image/icons/rank/woman.png"/>
+        <img src="../../../../image/icons/rank/woman.png"/>
         <span>
           여성
         </span>
       </div>
       <div class="rank_menu">
-        <img src="../../image/icons/rank/function.png"/>
+        <img src="../../../../image/icons/rank/function.png"/>
         <span>
           기능별
         </span>
       </div>
       <div class="rank_menu">
-       <img src="../../image/icons/rank/age.png"/>
+       <img src="../../../../image/icons/rank/age.png"/>
         <span>
           연령대
         </span>
       </div>
       <div class="rank_menu">
-        <img src="../../image/icons/rank/company.png"/>
+        <img src="../../../../image/icons/rank/company.png"/>
         <span>
           브랜드
         </span>
       </div>
       <div class="rank_menu">
-        <img src="../../image/icons/rank/nutrition.png"/>
+        <img src="../../../../image/icons/rank/nutrition.png"/>
         <span>
           영양소
         </span>
@@ -54,6 +54,8 @@ export default {};
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color:#fff;
+  margin-top:0.6vh;
 }
 
 .rank_header {

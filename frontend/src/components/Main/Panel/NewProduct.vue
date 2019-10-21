@@ -35,11 +35,14 @@ export default {};
 <style>
 .newproduct_main {
   width: 100%;
-  height: 20vh;
+  height: 23vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color:#fff;
+  margin-top:0.8vh;
+  padding-bottom:1vh;
 }
 
 .newproduct_header {

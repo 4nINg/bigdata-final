@@ -9,12 +9,12 @@
   </div>
 </template>
 <script>
-import NavigationBar from "../NavigationBar";
-import UserRank from "../UserRank";
-import NewProduct from "../NewProduct";
-import EventBanner from "../EventBanner";
-import Function from "../Function";
-import Footer from "../Footer";
+import NavigationBar from "../../Base/NavigationBar";
+import UserRank from "../Panel/UserRank";
+import NewProduct from "../Panel/NewProduct";
+import EventBanner from "../Panel/EventBanner";
+import Function from "../Panel/Function";
+import Footer from "../../Base/Footer";
 
 export default {
   components: {
