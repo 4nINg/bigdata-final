@@ -1,37 +1,43 @@
 <template>
   <div class="userrank">
     <div class="rank_header">
-      <span>유저 랭킹</span>
+      <span>유저&nbsp;</span><span>랭킹</span>
     </div>
     <div class="rank_menus">
       <div class="rank_menu">
+        <img src="../../image/icons/rank/man.png"/>
         <span>
-          <i class="far fa-bell" />
+          남성
         </span>
       </div>
       <div class="rank_menu">
+        <img src="../../image/icons/rank/woman.png"/>
         <span>
-          <i class="far fa-bell" />
+          여성
         </span>
       </div>
       <div class="rank_menu">
+        <img src="../../image/icons/rank/function.png"/>
         <span>
-          <i class="far fa-bell" />
+          기능별
         </span>
       </div>
       <div class="rank_menu">
+       <img src="../../image/icons/rank/age.png"/>
         <span>
-          <i class="far fa-bell" />
+          연령대
         </span>
       </div>
       <div class="rank_menu">
+        <img src="../../image/icons/rank/company.png"/>
         <span>
-          <i class="far fa-bell" />
+          브랜드
         </span>
       </div>
       <div class="rank_menu">
+        <img src="../../image/icons/rank/nutrition.png"/>
         <span>
-          <i class="far fa-bell" />
+          영양소
         </span>
       </div>
     </div>
@@ -43,7 +49,7 @@ export default {};
 <style>
 .userrank {
   width: 100%;
-  height: 20vh;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,10 +58,15 @@ export default {};
 
 .rank_header {
   width: 100%;
-  height: 20%;
+  height: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size:1em;
+  font-weight: 800;
+}
+.rank_header span:chil {
+  color:#e85f63;
 }
 
 .rank_menus {
@@ -69,18 +80,32 @@ export default {};
 
 .rank_menu {
   width: 30%;
-  height: 30%;
+  height: 45%;
+  border-radius:15%;
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
+  
 }
+
+.rank_menu img{
+  width: 35px;
+  cursor: pointer;
+}
+
+.rank_menu span{
+  cursor: pointer;
+}
+
+.rank_menu span{
+  font-size:0.4em;
+}
+
+
 
 .rank_menu {
   font-size: 2em;
 }
 
-.rank_menu:hover span {
-  /* transform: scale(1.5); */
-  border-bottom: 1px solid red;
-}
 </style>

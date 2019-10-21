@@ -1,6 +1,7 @@
 <template>
   <div class="newproduct_main">
     <div class="newproduct_header">
+      <span>new&nbsp;</span>
       <span>신규 등록 제품</span>
     </div>
     <div class="newproduct_container">
@@ -29,7 +30,24 @@
     </div>
   </div>
 </template>
+
+  
 <script>
+$(document).ready(function() {
+  $(".product").on("swiperight", function() {
+    alert("제바류");
+    console.log("Swiped.");
+    $("#menu").addClass("opened");
+    $("#body").addClass("opened");
+    $("#overlay").addClass("opened");
+  });
+  $(".product").on("swipeleft", function() {
+    console.log("Swiped.");
+    $("#menu").removeClass("opened");
+    $("#body").removeClass("opened");
+    $("#overlay").removeClass("opened");
+  });
+});
 export default {};
 </script>
 <style>
@@ -48,6 +66,10 @@ export default {};
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.newproduct_header span:first-child {
+  color: #e85f63;
 }
 
 .newproduct_container {
@@ -74,6 +96,6 @@ export default {};
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  margin-right: 5%;
+  margin-right: 1%;
 }
 </style>
