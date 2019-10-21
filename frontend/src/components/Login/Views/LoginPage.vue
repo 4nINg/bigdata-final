@@ -1,0 +1,316 @@
+<template>
+  <div class="form-structor">
+    <!-- <div class="signup">
+      <h2 class="form-title" id="signup">
+        <span>or</span>Sign up
+      </h2>
+      <div class="form-holder">
+        <input type="email" class="input" placeholder="Email" />
+        <input type="password" class="input" placeholder="Password" />
+        <input type="text" class="input" placeholder="NickName" />
+        <input type="number" class="input" placeholder="Age" />
+        <div class="input radio_div">
+          <label for="gender" class="radio_label">Gender</label>
+          <div class="radio_btn_div">
+            <div>
+              F
+              <input type="radio" name="gender" />
+            </div>
+            <div>
+              M
+              <input type="radio" name="gender" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="submit-btn">Sign up</button>
+    </div>-->
+    <div class="login slide-up">
+      <div class="center">
+        <h2 class="form-title" id="login">
+          <span>or</span>Log in
+        </h2>
+        <div class="form-holder">
+          <input type="email" class="input" placeholder="Email" />
+          <input type="password" class="input" placeholder="Password" />
+        </div>
+        <button class="submit-btn">Log in</button>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {};
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+.form-structor {
+  background-color: #222;
+  border-radius: 15px;
+  height: 92.5vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.form-structor::after {
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf884ad570b50659c5fa2dc2cfb20ecf&auto=format&fit=crop&w=1000&q=100");
+}
+
+.signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+.signup.slide-up {
+  top: 5%;
+  transform: translate(-50%, 0%);
+  transition: all 0.3s ease;
+}
+
+.signup.slide-up .form-holder,
+.signup.slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.signup.slide-up .form-title {
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.signup.slide-up .form-title span {
+  margin-right: 5px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.form-title {
+  color: #fff;
+  font-size: 1.7em;
+  text-align: center;
+}
+.form-title span {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.form-holder {
+  border-radius: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  margin-top: 50px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.form-holder .input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 100%;
+  padding: 1% 2%;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  font-size: 1em;
+}
+.form-holder .input:last-child {
+  border-bottom: 0;
+}
+.form-holder .input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.submit-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(256, 256, 256, 0.7);
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  margin: 15px auto;
+  padding: 3% 9%;
+  width: 100%;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.login {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+.login::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  transform: translate(-50%, 0);
+  background-color: #fff;
+  width: 200%;
+  height: 250px;
+  border-radius: 50%;
+  z-index: 4;
+  transition: all 0.3s ease;
+}
+
+.center {
+  position: absolute;
+  top: calc(50% - 10%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+.form-title {
+  color: #000;
+  font-size: 1.7em;
+  text-align: center;
+}
+.form-title span {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.form-holder {
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  overflow: hidden;
+  margin-top: 10%;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.form-holder .input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 25%;
+  padding: 3% 6%;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  font-size: 12px;
+}
+.form-holder .input:last-child {
+  border-bottom: 0;
+}
+.form-holder .input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.submit-btn {
+  background-color: #6b92a4;
+  color: rgba(256, 256, 256, 0.7);
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  margin: 15px auto;
+  padding: 5% 15%;
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.submit-btn:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.submit-btn .slide-up {
+  top: 90%;
+  transition: all 0.3s ease;
+}
+
+.submit-btn .slide-up .center {
+  top: 10%;
+  transform: translate(-50%, 0%);
+  transition: all 0.3s ease;
+}
+
+.submit-btn .slide-up .form-holder,
+.submit-btn .slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.submit-btn .slide-up .form-title {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn .slide-up .form-title span {
+  margin-right: 1%;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.radio_div {
+  width: 100%;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.radio_label {
+  width: 25%;
+}
+
+.radio_btn_div {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.radio_btn_div div {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>
