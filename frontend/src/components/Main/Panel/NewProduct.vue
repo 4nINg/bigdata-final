@@ -7,13 +7,11 @@
     <div class="carousel_div">
       <carousel
         :nav="false"
-        :items="2"
+        :items="1.3"
         :autoHeight="true"
         :loop="true"
         :center="true"
-        :autoplaySpeed="true"
         :dots="false"
-        :autoplayHoverPause="true"
         :margin="10"
       >
         <div v-for="temp in temps" class="newProduct">
@@ -27,6 +25,9 @@
 import carousel from "vue-owl-carousel";
 
 export default {
+  components: {
+    carousel
+  },
   data: () => ({
     temps: [
       "비타민1",
@@ -38,10 +39,7 @@ export default {
       "비타민7",
       "비타민8"
     ]
-  }),
-  components: {
-    carousel
-  }
+  })
 };
 </script>
 

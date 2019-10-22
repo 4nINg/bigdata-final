@@ -6,13 +6,11 @@
     <div class="carousel_div">
       <carousel
         :nav="false"
-        :items="2"
+        :items="1.2"
         :autoHeight="true"
         :loop="true"
         :center="true"
-        :autoplaySpeed="true"
         :dots="false"
-        :autoplayHoverPause="true"
         :margin="10"
       >
         <div v-for="banner in bannerlist" class="event">
@@ -32,6 +30,9 @@
 <script>
 import carousel from "vue-owl-carousel";
 export default {
+  components: {
+    carousel
+  },
   data: function() {
     return {
       bannerlist: [
@@ -53,9 +54,6 @@ export default {
         }
       ]
     };
-  },
-  components: {
-    carousel
   }
 };
 </script>
