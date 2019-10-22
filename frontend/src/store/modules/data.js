@@ -2,30 +2,51 @@ import api from '../../api'
 
 // initial state
 const state = {
-  // shape: [{ id, title, genres, viewCnt, rating }]
-  movieSearchList: [],
+  userInfo: null,
 }
 
 // actions
 const actions = {
-  async searchMovies({ commit }, params) {
-    const resp = await api.searchMovies(params)
-    const movies = resp.data.map(d => ({
-      id: d.id,
-      title: d.title,
-      genres: d.genres_array,
-      viewCnt: d.view_cnt,
-      rating: d.average_rating,
-    }))
-
-    commit('setMovieSearchList', movies)
+  async signUp({commit}, params){
+    await api.signUp(params)
+  },
+  async logIn({commit}, params){
+    var resp = await api.logIn(params).then((loginInfo)=>{
+      return loginInfo.data
+    });
+    if (resp.is_authenticated){
+      var userInfo = {
+        email: resp.email,
+        token: resp.token,
+        nickname: resp.nickname
+      }
+      commit('setUserInfo', userInfo) 
+      localStorage.setItem("token", state.userInfo.token) //로컬에 저장
+      return true
+    } else {
+      return false
+    }
+  },
+  async sessionStorage({commit}, params){
+    return await api.session(params).then((loginInfo)=>{
+      if (loginInfo.data.is_authenticated){
+        var userInfo = {
+          email: resp.email,
+          token: resp.token,
+          nickname: resp.nickname
+        }
+        commit('setUserInfo', userInfo)
+      } else {
+        localStorage.removeItem('token');
+        commit('setUserInfo', null);
+      }
+    })
   },
 }
-
 // mutations
 const mutations = {
-  setMovieSearchList(state, movies) {
-    state.movieSearchList = movies.map(m => m)
+  setUserInfo(state, userInfo) {
+    state.userInfo = userInfo
   },
 }
 

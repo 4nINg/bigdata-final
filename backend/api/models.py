@@ -6,7 +6,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.TextField()
     nickname = models.TextField()
-    age = models.IntegerField()
+    age = models.IntegerField(default=25)
     gender = models.CharField(max_length=2, default='M')
     
 #  wrapper for create user Profile

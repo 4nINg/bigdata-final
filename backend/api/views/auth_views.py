@@ -14,14 +14,16 @@ from django.contrib.auth.models import User
 def signup(request):
 
     if request.method == 'POST':
-        email = request.data['params'].get('email', None)
-        password = request.data['params'].get('password', None)
-        nickname = request.data['params'].get('nickname', None)
-        age = request.data['params'].get('age', None)
-        gender = request.data['params'].get('gender', None)
+        params = request.data.get('params', None)
+        email, password, nickname, gender = params['email'], params['password'], params['nickname'], params['gender']
+        # email, password, nickname, gender, age = params['email'], params['password'], params['nickname'], params['age'], params['gender']
 
-        create_profile(username=email, password=password, age=age, 
+        create_profile(username=email, password=password, age=5,
                         nickname=nickname, email=email, gender=gender)
+
+        # create_profile(username=email, password=password, age=age, 
+        #                 nickname=nickname, email=email, gender=gender)
+
 
         return Response(status=status.HTTP_201_CREATED)
 
@@ -35,7 +37,9 @@ def login(request):
 
     if user:
         auth.login(request, user)
-        token = Token.objects.create(user=user)
+        token = Token.objects.get(user=user)
+        if not token:
+            token = Token.objects.create(user=user)
         request.session[str(token)]= email
         profile = Profile.objects.get(user=user)
         login_info = {
@@ -89,4 +93,6 @@ def session(request):
     serializer = ProfileSerializer(login_info)
     return Response(data=serializer.data, status=status.HTTP_200_OK)
 
-
+# @api_view(['DELETE'])
+# def logout(request):
+#     token = request.data.get('token', None)
