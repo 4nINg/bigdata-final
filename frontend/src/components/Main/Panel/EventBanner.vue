@@ -4,34 +4,20 @@
       <span>이벤트</span>
     </div>
     <div class="carousel_div">
-      <carousel
-        :nav="false"
-        :items="2"
-        :autoHeight="true"
-        :loop="true"
-        :center="true"
-        :autoplaySpeed="true"
-        :dots="false"
-        :autoplayHoverPause="true"
-        :margin="10"
-      >
+      <carousel :nav="false" :items="1.2" :loop="true" :center="true" :dots="false" :margin="10">
         <div v-for="banner in bannerlist" class="event">
           <img :src="banner.src" />
         </div>
       </carousel>
     </div>
-    <!-- <div class="event_container">
-      <div class="event_content">
-        <div v-for="banner in bannerlist" class="event">
-          <img v-bind:src="banner.src">
-        </div>
-      </div>
-    </div>-->
   </div>
 </template>
 <script>
 import carousel from "vue-owl-carousel";
 export default {
+  components: {
+    carousel
+  },
   data: function() {
     return {
       bannerlist: [
@@ -53,9 +39,6 @@ export default {
         }
       ]
     };
-  },
-  components: {
-    carousel
   }
 };
 </script>
@@ -79,34 +62,6 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
-/* .event_container {
-  width: 100%;
-  height: 80%;
-  overflow: hidden;
-}
-
-.event_content {
-  width: 400%;
-  height: 100%;
-  float: left;
-  display: flex;
-  align-items: center;
-}
-
-.event {
-  width: 80%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 1%;
-}
-
-.event img{
-  width: 100%;
-
-} */
 
 .carousel_div img {
   width: 100%;

@@ -5,17 +5,7 @@
       <span>신규 등록 제품</span>
     </div>
     <div class="carousel_div">
-      <carousel
-        :nav="false"
-        :items="2"
-        :autoHeight="true"
-        :loop="true"
-        :center="true"
-        :autoplaySpeed="true"
-        :dots="false"
-        :autoplayHoverPause="true"
-        :margin="10"
-      >
+      <carousel :nav="false" :items="1.3" :loop="true" :center="true" :dots="false" :margin="10">
         <div v-for="temp in temps" class="newProduct">
           <span>{{temp}}</span>
         </div>
@@ -27,6 +17,9 @@
 import carousel from "vue-owl-carousel";
 
 export default {
+  components: {
+    carousel
+  },
   data: () => ({
     temps: [
       "비타민1",
@@ -38,10 +31,7 @@ export default {
       "비타민7",
       "비타민8"
     ]
-  }),
-  components: {
-    carousel
-  }
+  })
 };
 </script>
 
