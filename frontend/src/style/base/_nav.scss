@@ -1,0 +1,14 @@
+.navigation_bar {
+    @include panel(100%, 7.5vh, flex, space-between, center, $panelcolor);
+    border-bottom: 1px solid lightgray;
+    padding-left: 3%;
+    padding-right: 3%;
+    .navigation_menu {
+        @include panel(null, 100%, flex, center, center, null);
+        cursor: pointer;
+        flex-direction: column;
+        &:hover {
+            border-bottom: 3px solid $maincolor;
+        }
+    }
+}

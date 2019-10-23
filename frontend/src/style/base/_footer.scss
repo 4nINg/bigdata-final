@@ -1,0 +1,6 @@
+.footer_main {
+    @include panel(100%, 20vh, flex, center, center, null);
+    .footer {
+        @include panel(100%, 100%, flex, center, center, null);
+    }
+}

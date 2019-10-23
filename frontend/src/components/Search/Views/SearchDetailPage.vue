@@ -15,12 +15,3 @@ export default {
   }
 };
 </script>
-<style>
-.searchdetail_main {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-</style>

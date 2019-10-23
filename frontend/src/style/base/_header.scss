@@ -1,0 +1,20 @@
+.header_main {
+    @include panel(100%, 7.5vh, flex, space-between, center, $maincolor);
+    .logo_main {
+        @include panel(15%, 100%, flex, center, center, null);
+        flex-direction: column;
+        margin-left: 2.5%;
+        cursor: pointer;
+        margin-top: -1%;
+    }
+    .icon_main {
+        @include panel(18%, 100%, flex, space-around, center, null);
+        .logo_design {
+            color: $panelcolor;
+            font-size: 1.4em;
+            &:last-child {
+                margin-right: 10%;
+            }
+        }
+    }
+}

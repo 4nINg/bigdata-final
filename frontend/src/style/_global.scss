@@ -1,0 +1,23 @@
+* {
+    font-family: "BinggraeMelona";
+    font-weight: 500;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona.woff") format("woff");
+}
+
+#app {
+    @include panel(100%,
+    100%,
+    flex,
+    center,
+    center,
+    null);
+}
+
+.main_div {
+    max-width: 450px;
+    max-height: 812px;
+    @include size(100%,
+    100vh,
+    $bgcolor);
+}

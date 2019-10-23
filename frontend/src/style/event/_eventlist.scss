@@ -1,0 +1,10 @@
+.eventlist_main {
+    @include panel(100%, 100%, flex, center, center, null);
+    flex-direction: column;
+}
+
+.eventlist_event {
+    @include panel(100%, 25vh, flex, center, center, $panelcolor);
+    margin-top: 0.5vh;
+    border: 1px solid black;
+}
