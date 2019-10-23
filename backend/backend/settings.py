@@ -93,7 +93,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dodam_db',
-        'USER':'hyeonjin',
+        'USER':'hyeonjin23',
         'PASSWORD':'1234',
         'HOST':'localhost',
         'PORT':'5432'
