@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -71,7 +71,6 @@ export default {
     },
     ...mapActions("data", ["logIn"]),
     ...mapActions("data", ["signUp"]),
-
   },
   mounted() {
     const loginBtn = document.getElementById("login");

@@ -12,20 +12,15 @@ from django.contrib.auth.models import User
 
 @api_view(['POST'])
 def signup(request):
+    params = request.data.get('params', None)
+    email, password, nickname = params['email'], params['password'], params['nickname']
+    gender, age = params['age'], params['gender']
 
-    if request.method == 'POST':
-        params = request.data.get('params', None)
-        email, password, nickname, gender = params['email'], params['password'], params['nickname'], params['gender']
-        # email, password, nickname, gender, age = params['email'], params['password'], params['nickname'], params['age'], params['gender']
-
-        create_profile(username=email, password=password, age=5,
-                        nickname=nickname, email=email, gender=gender)
-
-        # create_profile(username=email, password=password, age=age, 
-        #                 nickname=nickname, email=email, gender=gender)
+    create_profile(username=email, password=password, age=age, 
+                    nickname=nickname, email=email, gender=gender)
 
 
-        return Response(status=status.HTTP_201_CREATED)
+    return Response(status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
 def login(request):
@@ -63,7 +58,8 @@ def login(request):
 # 로그인 세션 유지 / 유저 정보 저장
 @api_view(['POST'])
 def session(request):
-    token = request.data.get('token', None)
+    params = request.data.get('params', None)
+    token = params['token']
     email = request.session.get(token, None)
     if email == None:
         login_info = {
@@ -93,6 +89,14 @@ def session(request):
     serializer = ProfileSerializer(login_info)
     return Response(data=serializer.data, status=status.HTTP_200_OK)
 
-# @api_view(['DELETE'])
-# def logout(request):
-#     token = request.data.get('token', None)
+@api_view(['DELETE'])
+def logout(request):
+    token = request.data.get('token', None)
+    username = request.session.get(token, None)
+    user = User.objects.get(username=username)
+
+    del request.session[token]
+    user.auth_token.delete()
+    auth.logout(request)
+
+    return Response(status=status.HTTP_200_OK)

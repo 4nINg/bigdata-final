@@ -18,5 +18,12 @@ export default {
       params,
     })
   },
+  async logOut(params){
+    await axios.delete(`${apiUrl}/auth/logout/`, {
+      data: {
+        token : params,
+      },
+    })
+  }
 
 }
