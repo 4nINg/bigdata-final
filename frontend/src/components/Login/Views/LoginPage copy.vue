@@ -5,25 +5,42 @@
         <span>or</span>Sign up
       </h2>
       <div class="form-holder">
+<<<<<<< HEAD
         <input type="text" class="input" placeholder="Nickname"  v-model="nickname" />
         <input type="email" class="input" placeholder="Email" v-model="email"/>
         <input type="password" class="input" placeholder="Password" v-model="password"/>
+        <div class="input radio_div">
+            <label for="gender" class="radio_label">Gender</label>
+            <div class="radio_btn_div">
+                <div>
+                    F
+                    <input type="radio" name="gender" value="F" v-model="gender"/>
+                </div>
+                <div>
+                    M
+                    <input type="radio" name="gender" value="M" v-model="gender"/>
+                </div>
+=======
+        <input type="text" class="input" placeholder="NickName" />
+        <input type="email" class="input" placeholder="Email" />
+        <input type="password" class="input" placeholder="Password" />
         <input type="number" class="input" placeholder="Age" min="0" max="100">
         <div class="input radio_div">
           <label for="gender" class="radio_label">Gender</label>
           <div class="radio_btn_div">
             <div>
-                F
-                <input type="radio" name="gender" value="F" v-model="gender"/>
+              F
+              <input type="radio" name="gender" />
+>>>>>>> dfb6ebe43e74bc95e0b6ecd1393516803fa3d1e9
             </div>
             <div>
-                M
-                <input type="radio" name="gender" value="M" v-model="gender"/>
+              M
+              <input type="radio" name="gender" />
             </div>
+          </div>
         </div>
       </div>
-    </div>
-    <button class="submit-btn" @click="OnSubmitSignUp">Sign up</button>
+      <button class="submit-btn" @click="OnSubmitSignUp">Sign up</button>
     </div>
     <div class="login slide-up">
       <div class="center">

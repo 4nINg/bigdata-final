@@ -6,6 +6,8 @@ import SearchPage from "../components/Search/Views/SearchPage"
 import EventPage from "../components/Event/Views/EventPage"
 import RankPage from "../components/Rank/Views/RankPage"
 import LoginPage from "../components/Login/Views/LoginPage"
+import searchDetail from "../components/Search/Views/SearchDetailPage.vue"
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -15,7 +17,8 @@ const router = new VueRouter({
         { path: '/search', component: SearchPage, name: 'search' },
         { path: '/event', component: EventPage, name: 'evnet' },
         { path: '/rank', component: RankPage, name: 'rank' },
-        { path: '/login', component: LoginPage, name: 'login' }
+        { path: '/login', component: LoginPage, name: 'login' },
+        { path: '/detail', component: searchDetail, name: 'detail' }
 
     ],
     scrollBehavior() {
