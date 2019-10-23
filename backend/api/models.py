@@ -27,3 +27,10 @@ def create_profile(**kwargs):
     )
 
     return profile
+
+
+class Ingredient(models.Model):
+    name = models.TextField()
+
+class Function(models.Model):
+    name = models.TextField()
