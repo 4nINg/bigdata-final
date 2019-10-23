@@ -1,21 +1,24 @@
 <template>
-  <div class="eventlist_main">
-    <div class="eventlist_event">
-      <span>이벤트1</span>
-    </div>
-    <div class="eventlist_event">
-      <span>이벤트2</span>
-    </div>
-    <div class="eventlist_event">
-      <span>이벤트3</span>
-    </div>
-    <div class="eventlist_event">
-      <span>이벤트4</span>
+  <div id="eventpage" class="eventlist_main">
+    <div v-for="item in event" class="eventlist_event">
+      <span>{{item.text}}</span>
     </div>
   </div>
 </template>
+
 <script>
-export default {};
+export default{
+  data:function() {
+    return{
+      event:[
+              { text: '이벤트1'},
+              { text: '이벤트2'},
+              { text: '이벤트3'},
+              { text: '이벤트4'},
+          ]};
+  }
+}
+
 </script>
 <style>
 .eventlist_main {

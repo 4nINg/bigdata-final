@@ -1,26 +1,26 @@
-from .models import Profile, Movie
+from .models import Profile
 from rest_framework import serializers
 
 
 class ProfileSerializer(serializers.ModelSerializer):
-    id = serializers.ReadOnlyField()
-    username = serializers.SerializerMethodField('get_username')
-    is_staff = serializers.SerializerMethodField('get_is_staff')
-
+    email = serializers.SerializerMethodField('get_email')
+    token = serializers.SerializerMethodField('get_token')
+    is_authenticated = serializers.SerializerMethodField('get_is_authenticated')
+    nickname = serializers.SerializerMethodField('get_nickname')
+   
     class Meta:
         model = Profile
-        fields = ('id', 'username', 'is_staff', 'gender', 'age', 'occupation')
+        fields = ('email', 'token', 'is_authenticated', 'nickname')
 
-    def get_username(self, obj):
-        return obj.user.username
+    def get_email(self, obj):
+        return str(obj['username'])
 
-    def get_is_staff(self, obj):
-        return obj.user.is_staff
+    def get_token(self, obj):
+        return str(obj['token'])
+    
+    def get_is_authenticated(self, obj):
+        return obj['is_authenticated']
 
+    def get_nickname(self, obj):
+        return str(obj['nickname'])
 
-class MovieSerializer(serializers.ModelSerializer):
-    genres_array = serializers.ReadOnlyField()
-
-    class Meta:
-        model = Movie
-        fields = ('id', 'title', 'genres_array')

@@ -29,7 +29,7 @@ export default {
 }
 
 .main_div {
-  max-width: 400px;
+  max-width: 450px;
   max-height: 812px;
   width: 100%;
   height: 100vh;
