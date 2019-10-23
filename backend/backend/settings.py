@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # restframework
     'rest_framework',
+    'rest_framework.authtoken',
 
     # apps
     'api',
@@ -91,7 +92,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sample_db',
+        'NAME': 'django_test',
         'USER':'harry',
         'PASSWORD':'1234',
         'HOST':'localhost',
