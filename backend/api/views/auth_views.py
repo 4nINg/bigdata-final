@@ -13,8 +13,9 @@ from django.contrib.auth.models import User
 @api_view(['POST'])
 def signup(request):
     params = request.data.get('params', None)
+    print(params)
     email, password, nickname = params['email'], params['password'], params['nickname']
-    gender, age = params['age'], params['gender']
+    age, gender = params['age'], params['gender']
 
     create_profile(username=email, password=password, age=age, 
                     nickname=nickname, email=email, gender=gender)
@@ -32,8 +33,9 @@ def login(request):
 
     if user:
         auth.login(request, user)
-        token = Token.objects.get(user=user)
-        if not token:
+        try:
+            token = Token.objects.get(user=user)
+        except Exception as e:
             token = Token.objects.create(user=user)
         request.session[str(token)]= email
         profile = Profile.objects.get(user=user)

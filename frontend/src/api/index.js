@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const apiUrl = '/api'
+const apiUrl = 'http://192.168.100.67:8000/api'
+// const apiUrl = '/api'
 
 export default {
   signUp(params) {
