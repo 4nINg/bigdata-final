@@ -1,14 +1,14 @@
 <template>
   <div class="form-structor">
     <div class="signup">
-      <h2 class="form-title" id="signup">
+      <h2 id="signup" class="form-title">
         <span>or</span>Sign up
       </h2>
       <div class="form-holder">
+        <input type="text" class="input" placeholder="NickName" />
         <input type="email" class="input" placeholder="Email" />
         <input type="password" class="input" placeholder="Password" />
-        <input type="text" class="input" placeholder="NickName" />
-        <input type="number" class="input" placeholder="Age" />
+        <input type="number" class="input" placeholder="Age" min="0" max="100">
         <div class="input radio_div">
           <label for="gender" class="radio_label">Gender</label>
           <div class="radio_btn_div">
@@ -27,7 +27,7 @@
     </div>
     <div class="login slide-up">
       <div class="center">
-        <h2 class="form-title" id="login">
+        <h2 id="login" class="form-title">
           <span>or</span>Log in
         </h2>
         <div class="form-holder">
@@ -39,19 +39,43 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
-  data: () => ({}),
-  mounted() {},
-  methods() {}
+  mounted() {
+    const loginBtn = document.getElementById("login");
+    const signupBtn = document.getElementById("signup");
+
+    loginBtn.addEventListener("click", e => {
+      let parent = e.target.parentNode.parentNode;
+      Array.from(e.target.parentNode.parentNode.classList).find(element => {
+        if (element !== "slide-up") {
+          parent.classList.add("slide-up");
+        } else {
+          signupBtn.parentNode.classList.add("slide-up");
+          parent.classList.remove("slide-up");
+        }
+      });
+    });
+
+    signupBtn.addEventListener("click", e => {
+      let parent = e.target.parentNode;
+      Array.from(e.target.parentNode.classList).find(element => {
+        if (element !== "slide-up") {
+          parent.classList.add("slide-up");
+        } else {
+          loginBtn.parentNode.parentNode.classList.add("slide-up");
+          parent.classList.remove("slide-up");
+        }
+      });
+    });
+  }
 };
 </script>
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
 .form-structor {
-  background-color: #222;
-  border-radius: 15px;
   height: 92.5vh;
   width: 100%;
   position: relative;
@@ -67,8 +91,8 @@ export default {
     left: 0;
     background-repeat: no-repeat;
     background-position: left bottom;
-    background-size: 500px;
-    background-image: url("https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf884ad570b50659c5fa2dc2cfb20ecf&auto=format&fit=crop&w=1000&q=100");
+    background-size: cover;
+    background-color: #fff;
   }
 
   .signup {
@@ -105,7 +129,7 @@ export default {
     }
 
     .form-title {
-      color: #ffffff;
+      color: #e85f63;
       font-size: 1.7em;
       text-align: center;
 
@@ -120,6 +144,7 @@ export default {
     .form-holder {
       border-radius: 15px;
       background-color: #fff;
+      border: 1px solid #e85f63;
       overflow: hidden;
       margin-top: 50px;
       opacity: 1;
@@ -148,9 +173,9 @@ export default {
     }
 
     .submit-btn {
-      background-color: rgba(0, 0, 0, 0.4);
-      color: rgba(256, 256, 256, 0.7);
-      border: 0;
+      background-color: #e85f63;
+      color: rgba(256, 256, 256, 0.6);
+      border: 1px solid #eee;
       border-radius: 15px;
       display: block;
       margin: 15px auto;
@@ -165,7 +190,8 @@ export default {
 
       &:hover {
         transition: all 0.3s ease;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(232, 95, 99, 0.8);
+        color: #fff;
       }
     }
   }
@@ -176,7 +202,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #fff;
+    background-color: #96d0ce;
     z-index: 5;
     -webkit-transition: all 0.3s ease;
 
@@ -186,7 +212,7 @@ export default {
       left: 50%;
       top: -20px;
       -webkit-transform: translate(-50%, 0);
-      background-color: #ffffff;
+      background-color: #96d0ce;
       width: 200%;
       height: 250px;
       border-radius: 50%;
@@ -204,7 +230,7 @@ export default {
       -webkit-transition: all 0.3s ease;
 
       .form-title {
-        color: #000;
+        color: #fff;
         font-size: 1.7em;
         text-align: center;
 
@@ -250,7 +276,7 @@ export default {
       .submit-btn {
         background-color: #6b92a4;
         color: rgba(256, 256, 256, 0.7);
-        border: 0;
+        border: 1px solid #6b92a4;
         border-radius: 15px;
         display: block;
         margin: 15px auto;
@@ -265,7 +291,8 @@ export default {
 
         &:hover {
           transition: all 0.3s ease;
-          background-color: rgba(0, 0, 0, 0.8);
+          color: #6b92a4;
+          background-color: rgba(255, 255, 255, 0.4);
         }
       }
     }

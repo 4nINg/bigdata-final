@@ -5,15 +5,7 @@
       <span>신규 등록 제품</span>
     </div>
     <div class="carousel_div">
-      <carousel
-        :nav="false"
-        :items="1.3"
-        :autoHeight="true"
-        :loop="true"
-        :center="true"
-        :dots="false"
-        :margin="10"
-      >
+      <carousel :nav="false" :items="1.3" :loop="true" :center="true" :dots="false" :margin="10">
         <div v-for="temp in temps" class="newProduct">
           <span>{{temp}}</span>
         </div>
