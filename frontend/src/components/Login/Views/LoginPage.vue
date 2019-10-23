@@ -8,7 +8,7 @@
         <input type="text" class="input" placeholder="Nickname"  v-model="nickname" />
         <input type="email" class="input" placeholder="Email" v-model="email"/>
         <input type="password" class="input" placeholder="Password" v-model="password"/>
-        <input type="number" class="input" placeholder="Age" min="0" max="100">
+        <input type="number" class="input" placeholder="Age" min="0" max="100" v-model="age">
         <div class="input radio_div">
           <label for="gender" class="radio_label">Gender</label>
           <div class="radio_btn_div">
@@ -50,6 +50,7 @@ export default {
       password: null,
       nickname: null,
       gender: null,
+      age: null,
     }
   },
   methods: {
@@ -58,7 +59,8 @@ export default {
         email: this.email,
         password: this.password,
         nickname: this.nickname,
-        gender: this.gender
+        gender: this.gender,
+        age: this.age
       }
       this.signUp(params);
 	},
