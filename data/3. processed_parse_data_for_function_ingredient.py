@@ -22,7 +22,7 @@ Fnc['Fnc'] = list(Fnc['Fnc'])
 Ibase['Ibase'] = list(Ibase['Ibase'])
 
 Fn = pd.DataFrame(Fnc)
-Fn.to_csv("./data/function_list.csv", index = True, encoding='cp949')
+Fn.to_csv("./data/function_data.csv", index = True, encoding='cp949')
 
 Ib = pd.DataFrame(Ibase)
-Ib.to_csv("./data/ingredient_list.csv", index = True, encoding='cp949')
+Ib.to_csv("./data/ingredient_data.csv", index = True, encoding='cp949')
