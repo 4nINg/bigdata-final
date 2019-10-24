@@ -40,10 +40,7 @@ def login(request):
             
             token = str(token)
             request.session[token] = email
-            
             request.session.modified = True
-            print(request.session.session_key, '세션내 세션키값 로그인 함수')
-            print(request.session[token], '세션내 세션키값22 로그인 함수')
 
             profile = Profile.objects.get(user=user)
             login_info = {
@@ -56,10 +53,10 @@ def login(request):
             login_info = {
                 'username': None,
                 'token': None,
-                'is_authenticated': None,
+                'is_authenticated': False,
                 'nickname': None,
                 }
-        
+
         serializer = ProfileSerializer(login_info)
         
         return Response(data=serializer.data, status=status.HTTP_200_OK)
@@ -68,18 +65,18 @@ def login(request):
 @api_view(['POST'])
 def session(request):
     if request.method == 'POST':
-        token = request.data.get('token', None)
-        email = request.session.get(token, None)
-        print(email, '세션함수 이메일')
-        print(request.session.session_key, '세션함수 내 세션키값')
-        request.session.modified = True
+        token = request.data.get('user', None)
+        print(token)
+        email = request.session['username']
+        # request.session.modified = True
+        # print(email)
 
         if email == None:
             login_info = {
                 'username': None,
                 'token': None,
-                'is_authenticated': None,
-                'nickname': None,
+                'is_authenticated': False,
+                'nickname': False,
                 }
         else:
             user = User.objects.get(username=email)
