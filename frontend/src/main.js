@@ -8,7 +8,6 @@ import { mapActions } from 'vuex';
 
 Vue.use(VueCarousel);
 
-
 Vue.config.productionTip = false
 
 new Vue({
@@ -18,10 +17,7 @@ new Vue({
     render: h => h(App),
     created(){
       if (localStorage.getItem("token") !== undefined && localStorage.getItem("token") !== null){
-        const params = {
-          token: localStorage.getItem("token")
-        }
-        this.session(params);
+        this.session(localStorage.getItem("token"))
       }
     },
     methods: {

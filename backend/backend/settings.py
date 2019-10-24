@@ -89,13 +89,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dodam_db',
         'USER':'mino',
         'PASSWORD':'1234',
+        # 'HOST':'192.168.100.67',
         'HOST':'localhost',
         'PORT':'5432'
     }
@@ -140,3 +140,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+SESSION_SAVE_EVERY_REQUEST = True
