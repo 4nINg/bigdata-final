@@ -2,19 +2,15 @@
   <div class="navigation_bar">
     <div class="navigation_menu" @click="goTo(0)">
       <span>검색</span>
-      <span class="line_span"></span>
     </div>
     <div class="navigation_menu margin_menu" @click="goTo(1)">
       <span>랭킹</span>
-      <span class="line_span"></span>
     </div>
     <div class="navigation_menu margin_menu" @click="goTo(2)">
       <span>이벤트</span>
-      <span class="line_span"></span>
     </div>
     <div class="navigation_menu" @click="goTo(3)">
       <span>어워드</span>
-      <span class="line_span"></span>
     </div>
   </div>
 </template>
@@ -27,9 +23,11 @@ export default {
       if (n == 0) {
         router.push("/search");
       } else if (n == 1) {
+        router.push("/rank");
       } else if (n == 2) {
         router.push("/event");
       } else if (n == 3) {
+        router.push("/award");
       }
     }
   }

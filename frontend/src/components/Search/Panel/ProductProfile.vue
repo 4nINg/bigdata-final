@@ -1,3 +1,4 @@
+<<<<<<< HEAD:frontend/src/components/Search/Panel/Product.vue
 <template>
   <div class="searchdetail_product">
     <div class="searchdetail_header">
@@ -43,9 +44,45 @@ export default {
   }
 };
 </script>
+=======
+<template>
+  <div class="searchdetail_product">
+    <div class="searchdetail_header">
+      <div class="searchdetail_backbtn" @click="back()">
+        <span>
+          <i class="fas fa-chevron-left" />
+        </span>
+      </div>
+    </div>
+    <div class="searchdetail_image">
+      <img :src="imgurl" />
+    </div>
+    <div class="searchdetail_product_name">
+      <div class="searchdetail_name">
+        <span>{{productname}}</span>
+      </div>
+      <div class="searchdetail_brand">
+        <span>{{brand}}</span>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import router from "../../../router";
+export default {
+  props: ["imgurl", "productname", "brand"],
+  data: () => ({}),
+  methods: {
+    back() {
+      router.go(-1);
+    }
+  }
+};
+</script>
 <style>
 .searchdetail_product {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,6 +110,9 @@ export default {
 
 .searchdetail_image {
   width: 100%;
+  max-height: 30vh;
+  /* height: 100%; */
+  min-height: 230px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,10 +121,8 @@ export default {
 }
 
 .searchdetail_image img {
-  min-height: 220px;
-  min-width: 230px;
   width: 50%;
-  height: 30vh;
+  height: 100%;
 }
 
 .searchdetail_product_name {
@@ -104,3 +142,4 @@ export default {
   margin-bottom: 1vh;
 }
 </style>
+>>>>>>> 81cf195932fe0edb306c505a4160a95a2d7643bf:frontend/src/components/Search/Panel/ProductProfile.vue

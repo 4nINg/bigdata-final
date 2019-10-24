@@ -1,0 +1,4 @@
+.searchdetail_main {
+    @include panel(100%, null, flex, center, center, null);
+    flex-direction: column;
+}

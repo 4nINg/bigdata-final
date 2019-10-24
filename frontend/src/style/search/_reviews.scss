@@ -1,0 +1,50 @@
+.reviews_main {
+    @include panel(100%, null, flex, flex-start, center, $panelcolor);
+    max-height: 30vh;
+    flex-direction: column;
+    margin-top: 1.5%;
+    padding-bottom: 4%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.reviews_user {
+    @include panel(100%, 7vh, flex, space-between, center, null);
+}
+
+.reviews_userinfo {
+    @include panel(30%, 100%, flex, space-around, center, null);
+}
+
+.reveiws_avatar {
+    @include panel(40%, 80%, flex, center, center, null);
+    font-size: 2em;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.reviews_date {
+    @include panel(30%, 100%, flex, space-around, center, null);
+}
+
+.reviews_container {
+    @include panel(100%, null, flex, flex-start, center, null);
+    max-height: 25vh;
+    flex-direction: column;
+}
+
+.reviews_rating {
+    @include panel(100%, null, flex, flex-start, center, null);
+    padding-left: 2%;
+}
+
+.reviews_content {
+    @include panel(100%, null, flex, flex-start, flex-start, null);
+    margin-left: 5%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.reviews_heart {
+    @include panel(100%, null, flex, flex-start, center, red);
+    margin-left: 5%;
+}

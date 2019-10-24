@@ -1,0 +1,36 @@
+.userrank {
+    @include panel(100%, 30vh, flex, center, center, $panelcolor);
+    flex-direction: column;
+    margin-top: 0.6vh;
+}
+
+.rank_header {
+    @include panel(100%, 15%, flex, center, center, null);
+    font-size: 1em;
+    font-weight: 800;
+    span {
+        &:first-child {
+            color: $maincolor;
+        }
+    }
+}
+
+.rank_menus {
+    @include panel(100%, null, flex, space-around, center, null);
+    flex-wrap: wrap;
+    flex: auto;
+}
+
+.rank_menu {
+    @include panel(30%, 45%, flex, center, center, null);
+    flex-direction: column;
+    border-radius: 15%;
+    img {
+        width: 35px;
+        cursor: pointer;
+    }
+    span {
+        cursor: pointer;
+        font-size: 0.8em;
+    }
+}
