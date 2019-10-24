@@ -16,7 +16,7 @@ export default {
   },
   session(params){
     return axios.post(`${apiUrl}/auth/session/`, {
-      params,
+      token : params,
     })
   },
   async logOut(params){
@@ -26,5 +26,4 @@ export default {
       },
     })
   }
-
 }

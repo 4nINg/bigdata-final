@@ -39,7 +39,7 @@ const actions = {
     }
   },
   async session({commit}, params){
-    var resp = await api.session(params).then((loginInfo)=>{
+    return await api.session(params).then((loginInfo)=>{
       if (loginInfo.data.is_authenticated){
         var userInfo = {
           email: loginInfo.data.email,
