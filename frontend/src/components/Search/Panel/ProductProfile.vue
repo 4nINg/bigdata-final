@@ -22,20 +22,9 @@
 </template>
 <script>
 import router from "../../../router";
-import { mapState } from "vuex";
 export default {
+  props: ["imgurl", "productname", "brand"],
   data: () => ({}),
-  computed: {
-    ...mapState({
-      imgurl: state => state.data.productDetail.imgurl
-    }),
-    ...mapState({
-      productname: state => state.data.productDetail.productname
-    }),
-    ...mapState({
-      brand: state => state.data.productDetail.brand
-    })
-  },
   methods: {
     back() {
       router.go(-1);
@@ -46,6 +35,7 @@ export default {
 <style>
 .searchdetail_product {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,6 +63,9 @@ export default {
 
 .searchdetail_image {
   width: 100%;
+  max-height: 30vh;
+  /* height: 100%; */
+  min-height: 230px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,10 +74,8 @@ export default {
 }
 
 .searchdetail_image img {
-  min-height: 220px;
-  min-width: 230px;
   width: 50%;
-  height: 30vh;
+  height: 100%;
 }
 
 .searchdetail_product_name {

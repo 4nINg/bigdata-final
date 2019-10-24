@@ -1,17 +1,27 @@
 <template>
   <div class="searchdetail_main">
-    <product></product>
+    <ProductProfile
+      :imgurl="productDetail.imgurl"
+      :productname="productDetail.productname"
+      :brand="productDetail.brand"
+    ></ProductProfile>
     <InfoandReview></InfoandReview>
   </div>
 </template>
 <script>
-import product from "../Panel/Product";
+import ProductProfile from "../Panel/ProductProfile";
 import InfoandReview from "../Panel/InfoandReview";
+import { mapState } from "vuex";
 
 export default {
   components: {
-    product: product,
+    ProductProfile: ProductProfile,
     InfoandReview: InfoandReview
+  },
+  computed: {
+    ...mapState({
+      productDetail: state => state.data.productDetail
+    })
   }
 };
 </script>

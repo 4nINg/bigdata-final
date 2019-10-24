@@ -22,7 +22,6 @@ export default {
 <style>
 #app {
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,10 +29,7 @@ export default {
 
 .main_div {
   max-width: 450px;
-  max-height: 812px;
   width: 100%;
-  height: 100vh;
-  
-  background-color:rgb(230, 230, 230);
+  background-color: rgb(230, 230, 230);
 }
 </style>
