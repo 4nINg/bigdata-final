@@ -50,7 +50,6 @@ def products(request):
                               intake_method=intake_method, preservation=preservation, image_url=image_url)
             
             product.save()
-            print(product_to_function,'과연 민호의 운명은?')
 
             for my_ingredient in product_to_ingredient:
                 ingredient = Ingredient.objects.get(name=my_ingredient)
