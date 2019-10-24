@@ -59,6 +59,4 @@ def products(request):
                 function = Function.objects.get(name=my_function)
                 product.product_to_function.add(function)
 
-            
-            
         return Response(status=status.HTTP_201_CREATED)
