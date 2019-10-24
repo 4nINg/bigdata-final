@@ -1,0 +1,13 @@
+.event_main {
+    @include panel(100%, 24vh, flex, center, center, $panelcolor);
+    @include mtpb(0.8vh, 1vh);
+    flex-direction: column;
+    .event_header {
+        @include panel(100%, 20%, flex, center, center, null);
+    }
+    .carousel_div {
+        img {
+            width: 100%;
+        }
+    }
+}

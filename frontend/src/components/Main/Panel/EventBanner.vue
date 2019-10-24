@@ -42,28 +42,3 @@ export default {
   }
 };
 </script>
-<style>
-.event_main {
-  width: 100%;
-  height: 24vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #fff;
-  margin-top: 0.8vh;
-  padding-bottom: 1vh;
-}
-
-.event_header {
-  width: 100%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel_div img {
-  width: 100%;
-}
-</style>
