@@ -15,17 +15,10 @@ new Vue({
     router,
     store,
     render: h => h(App),
-    // created(){
-    //   if (localStorage.getItem("token") !== undefined && localStorage.getItem("token") !== null){
-    //     this.session(localStorage.getItem("token"))
-    //   }
-    created() {
-        if (localStorage.getItem("token") !== undefined && localStorage.getItem("token") !== null) {
-            const params = {
-                token: localStorage.getItem("token")
-            }
-            this.session(params);
-        }
+    created(){
+      if (localStorage.getItem("token") !== undefined && localStorage.getItem("token") !== null){
+        this.session(localStorage.getItem("token"))
+      }
     },
     methods: {
         ...mapActions({

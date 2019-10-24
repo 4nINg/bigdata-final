@@ -61,7 +61,7 @@ def login(request):
                 }
         
         serializer = ProfileSerializer(login_info)
-
+        
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 # 로그인 세션 유지 / 유저 정보 저장
