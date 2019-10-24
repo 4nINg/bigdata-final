@@ -11,6 +11,15 @@
     padding-top: 1%;
 }
 
+.age_check_tab {
+    @include panel(100%, 20%, flex, space-between, center, null);
+    .age_check {
+        @include size(33%, 100%, null);
+        text-align: center;
+        box-shadow: 0px 1px $bgcolor;
+    }
+}
+
 .rank_header {
     @include panel(100%, 20%, flex, center, center, null);
     position: relative;
@@ -37,6 +46,7 @@
 .product_div {
     @include panel(30%, 100%, flex, center, center, null);
     flex-direction: column;
+    margin-top: 5%;
 }
 
 .product_img {

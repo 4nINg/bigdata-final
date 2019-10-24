@@ -24,7 +24,7 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 .rank_product_img {
@@ -44,6 +44,7 @@ export default {
   font-size: 0.7em;
   text-align: center;
   width: 80%;
+  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;

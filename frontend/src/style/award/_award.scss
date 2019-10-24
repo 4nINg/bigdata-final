@@ -1,6 +1,5 @@
-.awardpage_main {
-    width: 100%;
-    display: flex;
+.award_main {
+    @include panel(100%, null, flex, center, center, null);
     flex-direction: column;
     .award-top {
         @include panel(100%, 30vh, flex, flex-start, center, $panelcolor);
@@ -24,7 +23,13 @@
                 @include size(100%, null, null);
                 flex-direction: column;
                 .award_image {
-                    @include size(80%, 10vh, red);
+                    @include size(80%, 10vh, $bgcolor);
+                }
+                .award-info {
+                    span {
+                        justify-content: center;
+                        align-items: center;
+                    }
                 }
             }
         }

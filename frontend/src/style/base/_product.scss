@@ -1,0 +1,31 @@
+.product_forlist_main {
+    @include panel(100%, 15vh, flex, space-around, center, $panelcolor);
+    margin-bottom: 0.1%;
+    .rankDiv {
+        @include panel(7%, 100%, flex, center, center, null);
+    }
+    .product_forlist_imgdiv {
+        @include panel(30%, 100%, flex, center, center, null);
+        img {
+            max-width: 110px;
+            max-height: 100px;
+        }
+    }
+    .product_forlist_productinfo {
+        @include panel(50%, 100%, flex, center, flex-start, null);
+        flex-direction: column;
+        .product_forlist_brand,
+        .product_forlist_productname,
+        .product_forlist_rating {
+            @include panel(100%, null, flex, flex-start, center, null);
+        }
+        .product_forlist_brand {
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+
+.ratingnumberdiv {
+    width: 10%;
+    text-align: center;
+}

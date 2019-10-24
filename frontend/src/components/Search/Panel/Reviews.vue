@@ -3,7 +3,9 @@
     <div class="reviews_user">
       <div class="reviews_userinfo">
         <div class="reviews_avatar">
-          <i class="far fa-user" />
+          <span>
+            <i class="far fa-user" />
+          </span>
         </div>
         <div class="reviews_nickname">
           <span>{{nickname}}</span>
