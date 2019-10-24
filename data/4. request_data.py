@@ -1,7 +1,7 @@
 import requests, csv, json, sys, io
 # sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='ISO-8859-1')
 
-API_URL = 'http://192.168.100.60:8000/api/'
+API_URL = 'http://192.168.100.69:8000/api/'
 headers = {'content-type': 'application/json'}
 
 # 효능 리스트 파싱 함수
