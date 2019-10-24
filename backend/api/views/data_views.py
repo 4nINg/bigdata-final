@@ -2,19 +2,6 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from api.models import Ingredient, Function, Product
-from api.serializers import HeavyMetalSerializer
-
-# 테스트 코드
-# from django.http import JsonResponse
-# def test(request):
-#     product = Product.objects.last()
-#     serializer = HeavyMetalSerializer(product)
-#     data = serializer.data
-#     print(data)
-
-#     # return Response(data=data, status=status.HTTP_200_OK)
-#     return JsonResponse({'error': 'Some error'}, status=401)
-
 
 @api_view(['POST'])
 def functions(request):
@@ -49,7 +36,7 @@ def products(request):
             name = product.get('name', None)
             company_name = product.get('company_name', None)
             ingredient_list = product.get('ingredient_list', None)
-            product_to_ingredient = product.get('product_to_ingredient', None)
+            product_to_ingredient = product.get('product_to_ingredient', None) 
             product_to_function = product.get('product_to_function', None)
             heavy_metal = product.get('heavy_metal', None)
             sungsang = product.get('sungsang', None)
@@ -59,10 +46,11 @@ def products(request):
             image_url = product.get('image_url', None)
 
             product = Product(name=name, company_name=company_name, ingredient_list=ingredient_list, 
-                              heavy_metal=heavy_metal, sungsang=sungsang, intake_hint=intake_hint, 
+                              heavy_metal_list=heavy_metal, sungsang=sungsang, intake_hint=intake_hint, 
                               intake_method=intake_method, preservation=preservation, image_url=image_url)
             
             product.save()
+            print(product_to_function,'과연 민호의 운명은?')
 
             for my_ingredient in product_to_ingredient:
                 ingredient = Ingredient.objects.get(name=my_ingredient)
@@ -73,5 +61,4 @@ def products(request):
                 product.product_to_function.add(function)
 
             break
-            
         return Response(status=status.HTTP_201_CREATED)
