@@ -2,6 +2,19 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from api.models import Ingredient, Function, Product
+from api.serializers import HeavyMetalSerializer
+
+# 테스트 코드
+# from django.http import JsonResponse
+# def test(request):
+#     product = Product.objects.last()
+#     serializer = HeavyMetalSerializer(product)
+#     data = serializer.data
+#     print(data)
+
+#     # return Response(data=data, status=status.HTTP_200_OK)
+#     return JsonResponse({'error': 'Some error'}, status=401)
+
 
 @api_view(['POST'])
 def functions(request):
@@ -39,7 +52,6 @@ def products(request):
             product_to_ingredient = product.get('product_to_ingredient', None)
             product_to_function = product.get('product_to_function', None)
             heavy_metal = product.get('heavy_metal', None)
-            print(heavy_metal)
             sungsang = product.get('sungsang', None)
             intake_hint = product.get('intake_hint', None)
             intake_method = product.get('intake_method', None)
