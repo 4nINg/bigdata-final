@@ -23,9 +23,11 @@ export default {
       if (n == 0) {
         router.push("/search");
       } else if (n == 1) {
+        router.push("/rank");
       } else if (n == 2) {
         router.push("/event");
       } else if (n == 3) {
+        router.push("/award");
       }
     }
   }
