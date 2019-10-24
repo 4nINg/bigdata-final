@@ -58,11 +58,7 @@ def login(request):
                 }
 
         serializer = ProfileSerializer(login_info)
-        # print(login_info)
-        print(serializer.data)
-        print(request.session[token])
-        request.session.save()
-
+        
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 # 로그인 세션 유지 / 유저 정보 저장

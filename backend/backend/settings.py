@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # restframework
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_swagger',
 
     # apps
     'api',
@@ -144,3 +145,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 SESSION_SAVE_EVERY_REQUEST = True
 
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
