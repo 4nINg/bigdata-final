@@ -1,6 +1,11 @@
-from .models import Profile
+from .models import Profile, Product, Ingredient, Function
 from rest_framework import serializers
 
+
+class HeavyMetalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ('name','company_name','heavy_metal')
 
 class ProfileSerializer(serializers.ModelSerializer):
     email = serializers.SerializerMethodField('get_email')

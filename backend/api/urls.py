@@ -12,4 +12,7 @@ urlpatterns = [
     url('data/functions/$', data_views.functions, name='functions'),
     url('data/ingredients/$', data_views.ingredients, name='ingredients'),
     url('data/products/$', data_views.products, name='products'),
+
+    # url('data/test/$', data_views.test), #테스트코드
+
 ]
