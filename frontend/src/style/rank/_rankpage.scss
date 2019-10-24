@@ -1,0 +1,49 @@
+.rankpage_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rank_container {
+    @include panel(100%, 25vh, flex, null, null, $panelcolor);
+    flex-direction: column;
+    margin-top: 1%;
+    padding-top: 1%;
+}
+
+.rank_header {
+    @include panel(100%, 20%, flex, center, center, null);
+    position: relative;
+    span {
+        &:first-child {
+            color: $maincolor;
+        }
+    }
+}
+
+.rank_more_btn {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 0.7em;
+}
+
+.rank_content {
+    @include panel(100%, 100%, flex, space-around, center, null);
+}
+
+.product_div {
+    @include panel(30%, 100%, flex, center, center, null);
+    flex-direction: column;
+}
+
+.product_img {
+    @include size(70%, 50%, null);
+}
+
+.product_info {
+    @include panel(100%, null, flex, center, center, null);
+    flex-direction: column;
+}

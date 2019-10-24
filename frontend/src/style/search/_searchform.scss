@@ -1,0 +1,41 @@
+.searchpage_main {
+    @include panel(100%, 100vh, flex, flex-start, center, $panelcolor);
+    flex-direction: column;
+    .searchpage_input {
+        @include panel(95%, 8vh, flex, space-between, center, null);
+        position: relative;
+        i {
+            position: absolute;
+            left: 0;
+            padding: 9px 8px;
+            top: 50%;
+            color: lightgray;
+            transform: translateY(-50%);
+        }
+        input[type="text"] {
+            @include size(100%, 70%, $bgcolor);
+            outline: none;
+            border-radius: 4px;
+            padding-left: 30px;
+            &:focus {
+                border-color: $maincolor;
+                box-shadow: 0 0 5px 0 $maincolor;
+            }
+            &:focus+i {
+                color: $maincolor;
+            }
+        }
+    }
+    .current_keyword {
+        @include panel(100%, 92vh, flex, flex-start, center, null);
+        flex-direction: column;
+        .current_keyword_header {
+            @include panel(100%, 6%, flex, flex-start, center, null);
+            border-top: 1px solid $bgcolor;
+            border-bottom: 1px solid $bgcolor;
+            & span {
+                margin-left: 3%;
+            }
+        }
+    }
+}

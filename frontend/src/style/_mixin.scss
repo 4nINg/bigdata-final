@@ -1,0 +1,24 @@
+@mixin size($width, $height, $background-color) {
+    width: $width;
+    height: $height;
+    background-color: $background-color;
+}
+
+@mixin panel($width, $height, $display, $justify-content, $align-items, $background-color) {
+    width: $width;
+    height: $height;
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    background-color: $background-color;
+}
+
+@mixin mtpb($margin-top, $padding-bottom) {
+    margin-top: $margin-top;
+    padding-bottom: $padding-bottom;
+}
+
+@mixin mtpt($margin-top, $padding-top) {
+    margin-top: $margin-top;
+    padding-top: $padding-top;
+}

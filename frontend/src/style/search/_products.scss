@@ -1,0 +1,37 @@
+.searchdetail_product {
+    @include panel(100%, null, flex, center, center, null);
+    flex-direction: column;
+}
+
+.searchdetail_header {
+    @include panel(100%, 6vh, flex, flex-start, center, $panelcolor);
+}
+
+.searchdetail_backbtn {
+    @include panel(10%, 10%, flex, center, center, null);
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.searchdetail_image {
+    @include panel(100%, null, flex, center, center, $panelcolor);
+    margin-bottom: 0.8vh;
+}
+
+.searchdetail_image img {
+    min-height: 220px;
+    min-width: 230px;
+    @include size(50%, 30vh, null);
+}
+
+.searchdetail_product_name {
+    @include panel(100%, 10vh, flex, space-around, center, $panelcolor);
+    flex-direction: column;
+    margin-bottom: 0.8vh;
+}
+
+.searchdetail_brand {
+    padding: 0.5vh;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    margin-bottom: 1vh;
+}

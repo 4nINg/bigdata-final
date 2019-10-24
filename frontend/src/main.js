@@ -5,7 +5,7 @@ import router from './router';
 import store from './store';
 import VueCarousel from "vue-owl-carousel";
 import { mapActions } from 'vuex';
-
+import '@/style/style.scss';
 Vue.use(VueCarousel);
 
 Vue.config.productionTip = false
@@ -21,8 +21,8 @@ new Vue({
       }
     },
     methods: {
-      ...mapActions({
-        session: 'data/session'
-      })
+        ...mapActions({
+            session: 'data/session'
+        })
     }
 }).$mount('#app')

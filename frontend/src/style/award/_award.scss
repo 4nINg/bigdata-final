@@ -1,0 +1,32 @@
+.awardpage_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .award-top {
+        @include panel(100%, 30vh, flex, flex-start, center, $panelcolor);
+    }
+    .award-container {
+        margin-top: 0.5%;
+        @include panel(100%, 69vh, flex, flex-start, center, $panelcolor);
+        flex-direction: column;
+        .award-header {
+            @include panel(100%, 20%, flex, center, center, null);
+            position: relative;
+            span {
+                &:first-child {
+                    color: $maincolor;
+                }
+            }
+        }
+        .award-content {
+            @include panel(100%, 40%, flex, space-around, center, $panelcolor);
+            .award-div {
+                @include size(100%, null, null);
+                flex-direction: column;
+                .award_image {
+                    @include size(80%, 10vh, red);
+                }
+            }
+        }
+    }
+}
