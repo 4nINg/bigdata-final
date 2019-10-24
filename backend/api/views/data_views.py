@@ -8,13 +8,13 @@ from api.models import Ingredient, Function
 # import csv
 
 @api_view(['POST'])
-def create_fnc_data():
+def create_fnc_data(request):
     if request.method == 'POST':
-        functions = request.data.get('function', None)
-        print(function)
+        functions = request.data.get('idx', None)
+        # print(functions)
         for function in functions:
             idx = function.get('idx', None)
             fnc = function.get('fnc', None)
-            print(idx)
-            print(fnc)
+            # print(idx)
+            # print(fnc)
     return 'yo!'

@@ -6,5 +6,5 @@ urlpatterns = [
     url('auth/login/$', auth_views.login, name='login'),
     url('auth/session/$', auth_views.session, name='session'),
     url('auth/logout/$', auth_views.logout, name='logout'),
-    url('fnc/', data_views.create_fnc_data, name='create_fnc_data'),
+    url('fnc/$', data_views.create_fnc_data, name='create_fnc_data'),
 ]

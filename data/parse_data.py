@@ -1,12 +1,16 @@
 import requests
 import csv
-import json
+# import json
+
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='ISO-8859-1')
 
 API_URL = 'http://localhost:8000/api/'
-headers = {'content-type': 'application/json'}
+# headers = {'content-type': 'application/json'}
 
 def create_fnc():
-    csv_data = open('./Fnc.csv', 'r')
+    csv_data = open('./Fnc.csv', 'r', encoding='ISO-8859-1')
     # request_data = csv.reader(csv_data)
     read_data = csv_data.readlines()[1:]
     fnc_data = csv.reader(read_data)
@@ -17,9 +21,10 @@ def create_fnc():
             'idx': idx,
             'fnc': fnc,
         })
-    # print(request_data)
+    print(request_data)
 
-    response = requests.post(API_URL + 'fnc/', data=json.dumps(request_data), headers=headers)
+    # response = requests.post(API_URL + 'fnc/', data=json.dumps(request_data), headers=headers)
+    response = requests.post(API_URL + 'fnc/', data=request_data)
     print(response.text)
 
 create_fnc()
