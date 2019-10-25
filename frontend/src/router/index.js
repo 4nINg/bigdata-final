@@ -9,6 +9,8 @@ import LoginPage from "../components/Login/Views/LoginPage"
 import searchDetail from "../components/Search/Views/SearchDetailPage.vue"
 import AwardPage from "../components/Award/Views/AwardPage";
 import AdminPage from "../components/Admin/Views/AdminPage";
+import SearchResult from "../components/Search/Views/SearchResult";
+import CategoryPage from "../components/Base/Category";
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -21,7 +23,9 @@ const router = new VueRouter({
         { path: '/login', component: LoginPage, name: 'login' },
         { path: '/detail', component: searchDetail, name: 'detail' },
         { path: '/award', component: AwardPage, name: 'award' },
-        { path: '/admin', component: AdminPage, name: 'admin' }
+        { path: '/admin', component: AdminPage, name: 'admin' },
+        { path: '/searchResult', component: SearchResult, name: 'searchResult' },
+        { path: '/category', component: CategoryPage, name: 'category' }
 
     ],
     scrollBehavior() {

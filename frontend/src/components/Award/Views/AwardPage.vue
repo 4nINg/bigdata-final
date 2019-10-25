@@ -1,5 +1,6 @@
 <template>
   <div class="award_main">
+    <NavigationBar/>
     <div class="award-top">
             <div>img</div>
     </div>
@@ -10,13 +11,13 @@
             </div>
         </div>
         <product
-        v-for="(award, index) in awards"
-        :key="index"
-        :ranking="index"
-        :imgurl="award.imgurl"
-        :brand="award.brand"
-        :productname="award.productname"
-        :rating="award.rating"
+          v-for="(award, index) in sorted"
+          :key="index"
+          :ranking="index"
+          :image_url="award.image_url"
+          :company_name="award.company_name"
+          :name="award.name"
+          :rating="award.rating"
         ></product>
         <div class="award-content">
             <div class="award-div">
@@ -45,16 +46,23 @@
 </template>
 <script>
 import product from "../../Base/Product";
+import NavigationBar from "../../Base/NavigationBar";
 import { mapState } from "vuex";
 
 export default {
   components: {
-    product: product
+    product: product,
+    NavigationBar
   },
   computed: {
     ...mapState({
       awards: state => state.data.products
-    })
+    }),
+    sorted() {
+      return this.awards.sort(function(a, b) {
+        return b.rating - a.rating;
+      });
+    }
   }
 };
 </script>
