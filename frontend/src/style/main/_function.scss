@@ -1,6 +1,6 @@
 .function_main {
     @include panel(100%, 20vh, flex, center, center, $panelcolor);
-    @include mtpt(0.8vh, 1vh);
+    @include mtpt(0.5vh, 1vh);
 }
 
 .function {

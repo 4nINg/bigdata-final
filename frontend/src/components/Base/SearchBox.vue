@@ -2,14 +2,14 @@
   <div class="searchbox_main">
     <div class="searchbox_div">
       <div class="searchbox_input_div">
-        <i class="fas fa-search" />
+        <!-- <i class="fas fa-search" /> -->
         <input class="searchbox_input" type="text" />
       </div>
-      <!-- <div class="searchbox_icon">
+      <div class="searchbox_icon">
         <span>
           <i class="fas fa-search" />
         </span>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -24,6 +24,8 @@ export default {};
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1%;
+  background-color:#fff;
 }
 
 .searchbox_div {
@@ -32,6 +34,7 @@ export default {};
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-bottom: 1%;
 }
 
 .searchbox_input_div {

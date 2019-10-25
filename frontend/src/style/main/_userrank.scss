@@ -1,7 +1,6 @@
 .userrank {
     @include panel(100%, 30vh, flex, center, center, $panelcolor);
     flex-direction: column;
-    margin-top: 0.6vh;
 }
 
 .rank_header {
@@ -25,12 +24,11 @@
     @include panel(30%, 45%, flex, center, center, null);
     flex-direction: column;
     border-radius: 15%;
+    cursor: pointer;
     img {
         width: 35px;
-        cursor: pointer;
     }
     span {
-        cursor: pointer;
         font-size: 0.8em;
     }
 }

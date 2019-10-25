@@ -16,7 +16,7 @@
           여성
         </span>
       </div>
-      <div class="rank_menu">
+      <div class="rank_menu" @click="goFunction()">
         <img src="../../../../image/icons/rank/function.png"/>
         <span>
           기능별
@@ -44,5 +44,13 @@
   </div>
 </template>
 <script>
-export default {};
+import router from "../../../router";
+
+export default {
+  methods: {
+    goFunction(){
+      router.push('/category')
+    }
+  },
+};
 </script>
