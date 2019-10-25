@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import JSONField
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.TextField()
@@ -25,7 +26,7 @@ def create_profile(**kwargs):
         age=kwargs['age'],
         gender=kwargs['gender'],
     )
-
+    
     return profile
 
 class Ingredient(models.Model):

@@ -10,20 +10,16 @@ export default {
     })
   },  
   logIn(params) {
-    return axios.post(`${apiUrl}/auth/login/`, {
+    return axios.post(`${apiUrl}/rest-auth/login/`, 
       params,
-    })
+    )
   },
   session(params){
-    return axios.post(`${apiUrl}/auth/session/`, {
-      token : params,
-    })
+    return axios.get(`${apiUrl}/auth/userinfo/`, 
+      params,
+    )
   },
-  async logOut(params){
-    await axios.delete(`${apiUrl}/auth/logout/`, {
-      data: {
-        token : params,
-      },
-    })
-  }
+  async logOut(){
+    await axios.post(`${apiUrl}/rest-auth/logout/`, 
+  )}
 }

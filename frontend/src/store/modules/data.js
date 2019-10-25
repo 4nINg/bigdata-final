@@ -32,49 +32,45 @@ const state = {
 
 // actions
 const actions = {
-  async signUp({ commit }, params) {
+  async signUp(params) {
     await api.signUp(params)
   },
-  async logIn({ commit }, params) {
-    var resp = await api.logIn(params).then((loginInfo) => {
-        return loginInfo.data
-    });
-    if (resp.is_authenticated) {
-        var userInfo = {
-          email: resp.email,
-          token: resp.token,
-          nickname: resp.nickname
-        }
-        commit('setUserInfo', userInfo)
-        localStorage.setItem("token", state.userInfo.token) //로컬에 저장
-        return true
-    } else {
-        return false
-    }
+  async logIn({commit}, params) {
+    var vm = this
+    await api.logIn(params)
+      .then((loginInfo) => {
+        let token = loginInfo.data.token
+        localStorage.setItem("token", token)
+      })
+      .then(() => {
+        vm.dispatch('data/session', { root:true })
+      })
+      .catch(err => {
+        console.log(err, '로그인에러메세지')
+      });
   },
-  async session({ commit }, params) {
-    await api.session(params).then((loginInfo) => {
-      if (loginInfo.data.is_authenticated) {
-          var userInfo = {
-            email: loginInfo.data.email,
-            token: loginInfo.data.token,
-            nickname: loginInfo.data.nickname
-          }
-          commit('setUserInfo', userInfo)
-      } else {
-          localStorage.removeItem('token');
-          commit('setUserInfo', null);
-      }
+  async session({commit}) {
+    let token = localStorage.getItem("token")
+    let params = {
+      headers: {
+        "Content-Type": 'application/json',
+        Authorization: 'JWT ' + token
+        }        
+      };
+    await api.session(params)
+      .then((userInfo) => {
+        commit('setUserInfo', userInfo.data)
     })
   },
   async logOut({ commit }) {
-    return await api.logOut(localStorage.getItem('token')).then(() => {
+    return await api.logOut().then(() => {
       localStorage.removeItem('token');
       commit('setUserInfo', null);
     })
   },
 }
-    // mutations
+
+// mutations
 const mutations = {
   setUserInfo(state, userInfo) {
       state.userInfo = userInfo

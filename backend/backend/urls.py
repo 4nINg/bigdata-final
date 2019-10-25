@@ -16,9 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_swagger.views import get_swagger_view
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+
     path('api/', include('api.urls')),
     path('api/docs/', get_swagger_view(title='API Docs')),
-    path('admin/', admin.site.urls),
+    
+    path("api-auth/", include("rest_framework.urls")),
+    path("api/rest-auth/", include("rest_auth.urls")), # 로그인/로그아웃
+    
+    # 토큰 발급 및 재발급 페이지 설정
+    path('api/rest-auth/obtain_token/', obtain_jwt_token, name="obtain-jwt"),
+    path('api/rest-auth/refresh_token/', refresh_jwt_token, name="refresh-jwt"),
+    path("api/rest-auth/registration/", include("rest_auth.registration.urls")), 
 ]

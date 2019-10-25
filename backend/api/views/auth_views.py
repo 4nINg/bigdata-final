@@ -2,6 +2,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
+from rest_framework.views import APIView
 
 from api.models import create_profile, Profile
 from api.serializers import ProfileSerializer
@@ -19,94 +20,13 @@ def signup(request):
     create_profile(username=email, password=password, age=age, 
                     nickname=nickname, email=email, gender=gender)
 
-
     return Response(status=status.HTTP_201_CREATED)
 
-@api_view(['POST'])
-def login(request):
-    if request.method == 'POST':
-        params = request.data.get('params', None)
-        email = params['email']
-        password = params['password']
-
-        user = authenticate(request, username=email, password=password)
-
-        if user:
-            auth.login(request, user)
-            try:
-                token = Token.objects.get(user=user)
-            except Exception as e:
-                token = Token.objects.create(user=user)
-            
-            token = str(token)
-            request.session[token] = email
-            request.session.modified = True
-
-            profile = Profile.objects.get(user=user)
-            login_info = {
-                'username':email,
-                'token':token,
-                'is_authenticated': True,
-                'nickname': profile.nickname,
-                }
-        else:
-            login_info = {
-                'username': None,
-                'token': None,
-                'is_authenticated': False,
-                'nickname': None,
-                }
-
-        serializer = ProfileSerializer(login_info)
-        
+class CurrentUserAPIView(APIView):
+    # authentication_classes = []
+    # permission_classes = [AllowAny]
+    def get(self, request):
+        profile = Profile.objects.get(email=request.user)
+        serializer = ProfileSerializer(profile)
+    
         return Response(data=serializer.data, status=status.HTTP_200_OK)
-
-# 로그인 세션 유지 / 유저 정보 저장
-@api_view(['POST'])
-def session(request):
-    if request.method == 'POST':
-        token = request.data.get('user', None)
-        print(token)
-        email = request.session['username']
-        # request.session.modified = True
-        # print(email)
-
-        if email == None:
-            login_info = {
-                'username': None,
-                'token': None,
-                'is_authenticated': False,
-                'nickname': False,
-                }
-        else:
-            user = User.objects.get(username=email)
-            if user.is_authenticated and token == str(Token.objects.get(user=user)):
-                profile = Profile.objects.get(user=user)
-                login_info = {
-                    'username':email,
-                    'token':token,
-                    'is_authenticated': True,
-                    'nickname': profile.nickname,
-                }
-            else:
-                login_info = {
-                    'username': None,
-                    'token': None,
-                    'is_authenticated': None,
-                    'nickname': None,
-                }
-        
-        serializer = ProfileSerializer(login_info)
-        return Response(data=serializer.data, status=status.HTTP_200_OK)
-
-@api_view(['DELETE'])
-def logout(request):
-    token = request.data.get('token', None)
-    username = request.session.get(token, None)
-    user = User.objects.get(username=username)
-
-    del request.session[token]
-    user.auth_token.delete()
-    auth.logout(request)
-
-    return Response(status=status.HTTP_200_OK)
