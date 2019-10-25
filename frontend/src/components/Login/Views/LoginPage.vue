@@ -63,10 +63,10 @@ export default {
         age: this.age
       }
       this.signUp(params);
-	},
+	  },
     OnSubmitLogIn(){
       const params = {
-        email: this.email,
+        username: this.email,
         password: this.password,
       }
       this.logIn(params);

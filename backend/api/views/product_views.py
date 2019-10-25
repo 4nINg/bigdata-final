@@ -12,6 +12,17 @@ def product(request):
         data = serializer.data
 
         return Response(data=data, status=status.HTTP_200_OK)
+    
+    if request.method == 'POST':
+        keyword = request.data.get('keyword', None)
+        products_by_name = Product.objects.filter(name__icontains=keyword)
+        products_by_ingredient = Product.objects.filter(ingredient_list__icontains=keyword)
+        products = products_by_name | products_by_ingredient
+
+        serializer = ProductSerializer(products, many=True)
+        data = serializer.data
+
+        return Response(data=data, status=status.HTTP_200_OK)
         
 
 @api_view(['POST', 'GET'])
