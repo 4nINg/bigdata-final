@@ -5,9 +5,9 @@
       v-for="(award, index) in awards"
       :key="index"
       :ranking="index"
-      :imgurl="award.imgurl"
-      :brand="award.brand"
-      :productname="award.productname"
+      :image_url="award.image_url"
+      :company_name="award.company_name"
+      :name="award.name"
       :rating="award.rating"
     ></product>
   </div>
