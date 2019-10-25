@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # restframework
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_swagger',
 
     # apps
     'api',
@@ -89,13 +90,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django_test',
         'USER':'harry',
         'PASSWORD':'1234',
+        # 'HOST':'192.168.100.67',
         'HOST':'localhost',
         'PORT':'5432'
     }
@@ -140,3 +141,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+SESSION_SAVE_EVERY_REQUEST = True
+
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
