@@ -14,7 +14,7 @@
 @import "base/header";
 @import "base/footer";
 @import "base/nav";
-@import "base/productprofile";
+@import "base/product";
 //search
 @import "search/searchform";
 @import "search/searchdetail";
@@ -27,3 +27,5 @@
 @import "login/login";
 //award
 @import "award/award";
+//admin
+@import "admin/admin";

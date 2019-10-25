@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const apiUrl = 'http://192.168.100.67:8000/api'
-// const apiUrl = '/api'
+const apiUrl = 'http://192.168.100.69:8000/api'
+    // const apiUrl = '/api'
 
 export default {
   signUp(params) {
@@ -21,5 +21,11 @@ export default {
   },
   async logOut(){
     await axios.post(`${apiUrl}/rest-auth/logout/`, 
-  )}
+  )},
+  async searchByKeyword(param) {
+    return await axios.post(`${apiUrl}/serializer/product/`, {
+        keyword: param
+    })
+  },
+
 }

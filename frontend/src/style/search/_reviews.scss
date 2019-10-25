@@ -12,14 +12,16 @@
 }
 
 .reviews_userinfo {
-    @include panel(30%, 100%, flex, space-around, center, null);
+    @include panel(35%, 100%, flex, flex-start, center, null);
 }
 
-.reveiws_avatar {
-    @include panel(40%, 80%, flex, center, center, null);
-    font-size: 2em;
+.reviews_avatar {
+    @include panel(35%, 80%, flex, center, center, null);
+    font-size: 1.5em;
     border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 50%;
+    margin-right: 10%;
+    margin-left: 6%;
 }
 
 .reviews_date {
@@ -45,6 +47,7 @@
 }
 
 .reviews_heart {
-    @include panel(100%, null, flex, flex-start, center, red);
+    @include panel(100%, null, flex, flex-start, center, null);
     margin-left: 5%;
+    color: red;
 }

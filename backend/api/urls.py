@@ -17,6 +17,4 @@ urlpatterns = [
     url('serializer/function/$', product_views.function, name='function'),
     url('serializer/ingredient/$', product_views.ingredient, name='ingredient'),
 
-    # url('data/test/$', data_views.test), #테스트코드
-
 ]
