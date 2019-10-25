@@ -1,14 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.contrib.postgres.fields import JSONField
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    gender = models.CharField(max_length=10, default='M')
+    email = models.TextField()
+    nickname = models.TextField()
     age = models.IntegerField(default=25)
-    occupation = models.CharField(max_length=200)
-
-
+    gender = models.CharField(max_length=2, default='M')
+    
 #  wrapper for create user Profile
 def create_profile(**kwargs):
 
@@ -20,19 +20,35 @@ def create_profile(**kwargs):
 
     profile = Profile.objects.create(
         user=user,
-        gender=kwargs['gender'],
+        email=kwargs['email'],
+        nickname=kwargs['nickname'],
         age=kwargs['age'],
-        occupation=kwargs['occupation']
+        gender=kwargs['gender'],
     )
 
     return profile
 
+class Ingredient(models.Model):
+    name = models.TextField()
 
-class Movie(models.Model):
-    id = models.IntegerField(primary_key=True)
-    title = models.CharField(max_length=200)
-    genres = models.CharField(max_length=500)
+class Function(models.Model):
+    name = models.TextField()
 
-    @property
-    def genres_array(self):
-        return self.genres.strip().split('|')
+class Product(models.Model):
+    name = models.TextField() # 제품명
+    company_name = models.TextField() # 회사명
+    ingredient_list = JSONField() # 주성분 전체리스트(json)
+    product_to_ingredient = models.ManyToManyField(Ingredient, related_name="ingredient_to_product") # 성분 M:N
+    product_to_function = models.ManyToManyField(Function, related_name="function_to_product") # 효능 M:N
+    heavy_metal_list = JSONField() # 중금속 전체리스트(json)
+    sungsang = models.TextField() # 성상
+    intake_hint = models.TextField()  # 섭취힌트
+    intake_method = models.TextField() # 섭취방법
+    preservation = models.TextField() # 보존방법
+    image_url = models.TextField() # 이미지url
+    views = models.IntegerField(default=0) # 조회수
+
+
+# class Comment(models.Model):
+#     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
+#     product = models.ForeignKey(Product, on_delete=models.CASCADE)

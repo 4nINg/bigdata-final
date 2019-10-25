@@ -1,0 +1,78 @@
+.newproduct_main {
+    @include panel(100%, 23vh, flex, center, center, $panelcolor);
+    @include mtpb(0.5vh, 1vh);
+    flex-direction: column;
+    .newproduct_header {
+        @include panel(100%, 30%, flex, center, center, null);
+        span {
+            &:first-child {
+                color: $maincolor;
+            }
+        }
+    }
+}
+
+.carousel_div {
+    @include size(100%, 70%, null);
+    position: relative;
+    overflow: hidden;
+    div {
+        height: 100%;
+    }
+}
+
+.newProduct {
+    @include panel(100%, 100%, flex, center, center, null);
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.swiper-container {
+    @include size(100%, 100%, null);
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: $panelcolor;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-pagination {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: auto !important;
+    left: auto !important;
+    margin: 0;
+}
+
+.swiper-pagination-bullet {
+    padding: 5px 10px;
+    border-radius: 0;
+    width: auto;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+    color: #fff;
+    background: #007aff;
+}

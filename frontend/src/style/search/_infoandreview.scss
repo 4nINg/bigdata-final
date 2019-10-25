@@ -1,0 +1,75 @@
+.searchdetail_container {
+    @include panel(100%, null, flex, center, center, null);
+    flex-direction: column;
+}
+
+.searchdetail_dividediv {
+    @include panel(100%, null, flex, space-around, center, $panelcolor);
+    margin-bottom: 0.5vh;
+    div {
+        @include panel(49.5%, 5vh, flex, center, center, null);
+        cursor: pointer;
+    }
+}
+
+.div_active {
+    border-bottom: 3px solid $maincolor;
+}
+
+.searchdetail_content {
+    @include panel(100%, null, flex, center, center, null);
+    flex-direction: column;
+}
+
+.searchdetail_content {
+    @include panel(100%, null, flex, center, center, null);
+    flex-direction: column;
+}
+
+.searchdetail_function {
+    @include panel(100%, null, flex, flex-start, center, $panelcolor);
+    flex-wrap: wrap;
+    flex: auto;
+    margin-bottom: 0.8vh;
+}
+
+.product_function {
+    @include panel(25%, 10vh, flex, center, center, null);
+    flex-direction: column;
+    i {
+        margin-top: 1vh;
+        font-size: 2em;
+    }
+}
+
+.searchdetail_intake_quantity {
+    @include panel(100%, 10vh, flex, space-around, center, $panelcolor);
+    flex-direction: column;
+}
+
+.intake_header {
+    padding-bottom: 0.1vh;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.review_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.review_header {
+    @include panel(100%, 5vh, flex, center, center, $panelcolor);
+}
+
+.rating_div {
+    @include panel(100%, 7vh, flex, center, center, $panelcolor);
+}
+
+.color_active {
+    color: $maincolor;
+}
+
+.rating {
+    @include panel(30%, null, flex, center, center, null);
+}

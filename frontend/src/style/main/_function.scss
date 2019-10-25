@@ -1,0 +1,12 @@
+.function_main {
+    @include panel(100%, 20vh, flex, center, center, $panelcolor);
+    @include mtpt(0.5vh, 1vh);
+}
+
+.function {
+    @include panel(33%, 100%, flex, center, center, null);
+}
+
+.divider {
+    @include size(0.5%, 60%, $bgcolor);
+}
